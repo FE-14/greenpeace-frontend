@@ -27,10 +27,10 @@ This is the Greenpeace website.
 
 ## Main Features
 
-- Display All Books
-- Book's Details
-- Cart Page
-- Checkout Books
+- Display posts
+- Read posts
+- Articles page
+- Valounteer form section
 
 ## Team Members
 
@@ -92,17 +92,16 @@ Details on deployment using Vercel or Netlify here.
 
 ## Data Model
 
-### Posts
+### Posts Response Data
 
 ```json
 {
-  "id": "abc123",
-  "title": "Hujan",
-  "publishedYear": 2022,
-  "author": "Tere Liye",
-  "description": "Novel from Indonesia",
-  "price": 200000,
-  "isAvailable": true,
-  "quantity": 100
+  "title": "NDC Terbaru Indonesia Tidak Menjawab Ancaman Krisis Iklim",
+  "author_name": "Greenpeace Indonesia",
+  "post_date": "2022-09-28 10:12:20",
+  "post_description": "Meskipun ada peningkatan dalam target pengurangan emisi, dari 29% menjadi 31.89% dengan usaha sendiri di tahun 2030, dan dari 41% menjadi 43.2% jika dengan bantuan internasional, namun enhanced NDC ini masih jauh dari harapan publik untuk melindungi masa depan Indonesia dari dampak buruk krisis iklim.",
+  "post_content": "",
+  "tags": ["hutan", "krisis iklim"],
+  "image_url": "https://www.greenpeace.org/static/planet4-indonesia-stateless/2021/11/beb8946b-gp1swjin_web_size-768x512.jpg"
 }
 ```
