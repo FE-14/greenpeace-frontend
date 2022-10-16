@@ -1,6 +1,6 @@
 # Greenpeace
 
-This is the Greenpeace website.
+Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkungan hidup dan hak asasi manusia. Kami tim FE-14 mendapatkan Challenge Partner dari Greenpeace untuk membuat sebuah website yang dapat membantu mereka menyelesaikan masalah dan isu permasalahan lainnya.
 
 ![Screenshot 1]()
 
@@ -21,8 +21,8 @@ This is the Greenpeace website.
 
 ### Design
 
-- Figma Mockup           : [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
-- Figma Prototype        :
+- Figma Mockup : [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
+- Figma Prototype :
 - Wireframes (Whimsical) : [Wireframes Link](https://whimsical.com/greenpeace-wireframe-PF2tuqF2hMAvC8R775c7Xa@7YNFXnKbYkjeN7qQXEaz4)
 
 ## Main Features
