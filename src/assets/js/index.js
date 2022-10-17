@@ -4,13 +4,14 @@ const buttonMenuElement = document.querySelector("#btn-open-navbar");
 const navbarElement = document.querySelector("nav");
 
 buttonMenuElement.addEventListener("click", () => {
-  navbarElement.classList.remove("-top-[1000px]");
+  console.log("oek");
+  navbarElement.classList.remove("-top-[100vh]");
   navbarElement.classList.add("top-0");
   document.body.classList.add("overflow-y-hidden");
 });
 
 buttonCloseSidebarElement.addEventListener("click", () => {
-  navbarElement.classList.add("-top-[1000px]");
+  navbarElement.classList.add("-top-[100vh]");
   navbarElement.classList.remove("top-0");
   document.body.classList.remove("overflow-y-hidden");
 });
