@@ -41,7 +41,7 @@ Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkunga
 
 - HTML
 - CSS
-  - Bootstrap v5.2
+  - Tailwind CSS
 - JavaScript
 - Node.js & npm
 - Data Fetching
