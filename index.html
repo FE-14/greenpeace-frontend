@@ -86,9 +86,9 @@
           <ul>
             <li>
               <a
-                href="/articles"
+                href="/artikel"
                 class="group text-2xl font-semibold hover:brightness-75"
-                >Articles
+                >Artikel
                 <hr
                   class="h-1 w-1/2 bg-green-800 duration-200 group-hover:w-full"
               /></a>
@@ -187,32 +187,65 @@
       class="relative flex w-full flex-col items-center bg-green-900 py-8"
     >
       <div
-        class="mb-12 flex flex-col justify-center gap-2 text-center text-white md:gap-3 xl:gap-4"
+        class="container flex w-full flex-col items-center justify-between px-8 lg:flex-row"
       >
-        <h2 class="text-xl font-bold md:text-2xl lg:text-3xl">Contact Us</h2>
+        <!-- Links for article content -->
         <div
-          class="flex items-center gap-4 text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+          class="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-center"
         >
-          <a href="#"
-            ><i class="bx bxl-facebook-circle hover:brightness-75"></i
-          ></a>
-          <a href="#"
-            ><i class="bx bxl-instagram-alt hover:brightness-75"></i
-          ></a>
-          <a href="#"><i class="bx bxl-twitter hover:brightness-75"></i></a>
-          <a href="#"><i class="bx bxl-youtube hover:brightness-75"></i></a>
+          <h2
+            class="border-b-2 border-b-green-400 font-montserrat text-xl font-bold text-green-400 md:text-2xl"
+          >
+            Artikel
+          </h2>
+
+          <ul
+            class="flex items-center gap-4 text-white md:gap-8 lg:flex-col lg:gap-2"
+          >
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Semua</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Krisis Iklim</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Hutan</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Polusi</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact content -->
+        <div
+          class="mb-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-3 xl:gap-4"
+        >
+          <h2 class="text-xl font-semibold md:text-2xl">Contact Us</h2>
+          <div class="flex items-center gap-4 text-xl xl:text-2xl">
+            <a href="#"
+              ><i class="bx bxl-facebook-circle hover:brightness-75"></i
+            ></a>
+            <a href="#"
+              ><i class="bx bxl-instagram-alt hover:brightness-75"></i
+            ></a>
+            <a href="#"><i class="bx bxl-twitter hover:brightness-75"></i></a>
+            <a href="#"><i class="bx bxl-youtube hover:brightness-75"></i></a>
+          </div>
         </div>
       </div>
+
+      <!-- Bottom content -->
       <div class="relative flex w-full items-center">
         <img
           src="/src/assets/images/greenpeace-logo-white.png"
           alt="Greenpeace Logo"
-          class="absolute left-8 z-50 h-9 bg-green-900 px-4 md:h-11 lg:px-12"
+          class="absolute left-8 z-50 h-9 bg-green-900 px-4 md:left-16 md:h-11 lg:px-12"
         />
         <img
           src="/src/assets/images/white-line-illustration.png"
           alt="Artboard Illustration"
-          class="h-8 w-full bg-cover object-cover md:h-10"
+          class="h-8 w-full bg-cover bg-repeat-x object-cover md:h-10"
         />
       </div>
     </footer>
