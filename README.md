@@ -69,12 +69,6 @@ Build for production:
 npm run build
 ```
 
-Start in production mode:
-
-```sh
-npm start
-```
-
 Format code:
 
 ```sh
