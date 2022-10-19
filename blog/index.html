@@ -5,10 +5,233 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/assets/css/output.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
     <title>Blog | Greenpeace Indonesia</title>
   </head>
-  <body>
-    <h1 class="px-8 text-9xl md:px-2 lg:px-8">Hello Blog!</h1>
+  <body class="flex min-h-screen flex-col overflow-x-hidden">
+    <header class="sticky top-0 left-0 z-50 font-montserrat">
+      <!-- Navbar item -->
+      <div
+        class="flex w-full items-center justify-between bg-green-800/90 py-4 px-8 text-white backdrop-blur-[2px] lg:py-8 lg:px-16"
+        id="navbar-container"
+      >
+        <a href="/"
+          ><img
+            src="/src/assets/images/greenpeace-logo-white.png"
+            alt="Greenpeace Logo"
+            class="w-44 md:w-48 lg:w-full"
+        /></a>
+
+        <button type="button" class="p-2 lg:hidden" id="btn-open-navbar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-8 w-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+
+        <nav
+          class="absolute left-[30%] right-0 -top-[100vh] z-[9999] flex h-screen flex-col items-center justify-center gap-16 bg-green-800/90 p-4 backdrop-blur-md transition-all duration-200 lg:static lg:h-full lg:w-1/2 lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:bg-transparent lg:backdrop-blur-none"
+        >
+          <button
+            type="button"
+            class="absolute left-[45%] bottom-16 lg:hidden"
+            id="btn-close-sidebar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-11 w-11"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+
+          <!-- Navlink -->
+          <ul>
+            <li>
+              <a
+                href="/artikel"
+                class="group text-2xl font-semibold hover:brightness-75"
+                >Artikel
+                <hr
+                  class="h-1 w-1/2 bg-green-800 duration-200 group-hover:w-full"
+              /></a>
+            </li>
+          </ul>
+
+          <!-- Search field -->
+          <form class="flex w-full items-center gap-3 lg:w-1/2">
+            <label for="search" class="border-r-2 px-3 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </label>
+            <input
+              type="search"
+              name="search-field"
+              id="search-field"
+              class="w-full appearance-none rounded-md bg-transparent p-2 text-white outline outline-1 outline-gray-100/75 placeholder:text-white lg:outline-none lg:focus:outline-none"
+              placeholder="Telusuri ..."
+              autocomplete="off"
+            />
+          </form>
+        </nav>
+      </div>
+    </header>
+
+    <main id="flex-[1]">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas aliquid
+      blanditiis asperiores? Neque quasi quam sequi asperiores totam quod
+      tempora nihil non? Eaque veniam ad, rem rerum odit iusto delectus totam
+      amet neque repudiandae eum tempora reiciendis quisquam est quas fuga
+      officia quibusdam quasi dolor nam deserunt. Ex vero perspiciatis deleniti
+      eligendi porro maiores? Veniam, nulla deleniti perferendis repudiandae
+      laborum sint odio soluta tempora incidunt ad optio iusto nam nisi rerum
+      impedit! Unde ipsam iste repellat eligendi asperiores beatae similique,
+      quas illum officiis, enim autem aspernatur eaque quod tempora fuga vel
+      alias libero nobis. Dolore sint recusandae quo. Voluptatibus, saepe. Dolor
+      quam maxime ducimus architecto quis nisi ipsum hic earum labore
+      accusantium, quia commodi quidem quas minima tempora modi officiis
+      molestias cum. Laboriosam ipsam quod nihil fugit voluptas nobis alias
+      dicta porro vel perferendis nam expedita itaque, doloribus architecto,
+      odit aliquam inventore, minima illo est magni? Provident nostrum eius
+      cumque consequuntur veritatis neque ex aspernatur error ullam esse
+      officiis harum, atque odio quisquam eligendi. Quae, eligendi accusantium
+      ut, neque vel soluta quaerat sequi tenetur nihil optio consequatur nam
+      veritatis saepe! Et, deserunt cupiditate saepe harum consequuntur
+      obcaecati officia aspernatur necessitatibus quas laboriosam commodi?
+      Beatae enim sed nulla laboriosam ut voluptatem aliquam a delectus nemo
+      esse excepturi molestiae, maiores temporibus dolores consectetur!
+      Asperiores labore culpa ratione, illo, atque praesentium quas non id
+      officiis saepe voluptate voluptatem sit. Magnam, doloremque impedit
+      consequuntur illo cumque, atque tempora, magni consequatur fugiat incidunt
+      inventore a iure commodi facilis! Porro dolorem ipsa odio cupiditate
+      itaque asperiores quibusdam delectus facilis quisquam repudiandae tempore
+      molestias soluta saepe sed consequuntur, nesciunt perferendis qui a.
+      Corporis quidem magnam ea sed. Exercitationem, laudantium fugiat
+      praesentium magnam, illo nobis consectetur totam adipisci numquam unde
+      natus ipsam eligendi, veniam sapiente enim aperiam aliquam blanditiis
+      velit aspernatur necessitatibus eos sequi aliquid. Accusamus nulla, in
+      dolorem adipisci eligendi voluptatum, deserunt sapiente obcaecati
+      reprehenderit culpa fugit consequuntur sit soluta non commodi dolore nihil
+      excepturi beatae aspernatur enim est sunt nemo necessitatibus quas.
+      Architecto rem, obcaecati earum iusto vitae accusamus tenetur, aperiam
+      nulla corrupti aut rerum modi dicta placeat libero voluptate, sit mollitia
+      quaerat error asperiores quibusdam consequuntur aspernatur saepe ipsum.
+      Quibusdam magni quae ipsam, omnis dolorum repellat. Deserunt excepturi
+      laborum voluptatem molestiae consectetur magnam impedit distinctio sint
+      quidem obcaecati, quos eum sed praesentium provident odio autem
+      perspiciatis pariatur, molestias commodi voluptate accusantium? Quaerat
+      distinctio placeat delectus nesciunt officia? Expedita quia ut cum aliquid
+      hic, tempora error numquam sunt itaque libero provident velit in nam
+      perferendis cumque atque assumenda veritatis magnam, molestias deserunt
+      optio. Voluptate accusamus ducimus quae quos numquam quasi asperiores
+      reiciendis, dolorem non, nostrum nulla omnis eius dignissimos, natus atque
+      quis ab excepturi. Id itaque fugit, illum quo mollitia ab consequatur,
+      repudiandae iste sit, quae laboriosam iusto deserunt. Consequatur aliquid
+      doloribus id dolore corrupti nisi nemo fuga quos, at unde sequi veniam
+      laudantium nobis distinctio facilis amet cupiditate quidem. Ut quibusdam
+      recusandae aperiam suscipit eligendi id nobis consequuntur soluta beatae
+      blanditiis, magni, aliquam asperiores libero modi animi laudantium?
+      Tenetur, nulla expedita? Numquam beatae saepe natus!
+    </main>
+
+    <footer class="flex w-full flex-col items-center bg-green-900 py-8">
+      <div
+        class="container flex w-full flex-col items-center justify-between px-8 lg:flex-row"
+      >
+        <!-- Links for article content -->
+        <div
+          class="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-center"
+        >
+          <h2
+            class="border-b-2 border-b-green-400 font-montserrat text-xl font-bold text-green-400 md:text-2xl"
+          >
+            Artikel
+          </h2>
+
+          <ul
+            class="flex items-center gap-4 text-white md:gap-8 lg:flex-col lg:gap-2"
+          >
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Semua</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Krisis Iklim</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Hutan</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Polusi</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact content -->
+        <div
+          class="mb-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-3 xl:gap-4"
+        >
+          <h2 class="text-xl font-semibold md:text-2xl">Contact Us</h2>
+          <div class="flex items-center gap-4 text-xl xl:text-2xl">
+            <a href="#"
+              ><i class="bx bxl-facebook-circle hover:brightness-75"></i
+            ></a>
+            <a href="#"
+              ><i class="bx bxl-instagram-alt hover:brightness-75"></i
+            ></a>
+            <a href="#"><i class="bx bxl-twitter hover:brightness-75"></i></a>
+            <a href="#"><i class="bx bxl-youtube hover:brightness-75"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom content -->
+      <div class="flex w-full items-center">
+        <img
+          src="/src/assets/images/greenpeace-logo-white.png"
+          alt="Greenpeace Logo"
+          class="absolute left-8 h-8 bg-green-900 px-4 md:left-16 md:h-11 lg:px-12"
+        />
+        <img
+          src="/src/assets/images/white-line-illustration.png"
+          alt="Artboard Illustration"
+          class="h-8 w-full bg-cover bg-repeat-x object-cover md:h-10"
+        />
+      </div>
+    </footer>
 
     <!-- JavaScript Scripts -->
     <script type="module" src="/src/assets/js/index.js"></script>
