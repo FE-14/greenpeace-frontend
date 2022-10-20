@@ -129,7 +129,7 @@
 
     <main class="my-12 flex-1 p-8">
       <section
-        class="flex flex-col items-center justify-center gap-2 font-montserrat"
+        class="flex w-full flex-col items-center justify-center gap-2 font-montserrat"
       >
         <h1 class="text-3xl font-bold text-green-gp-500 lg:text-4xl">
           Artikel Terbaru
@@ -142,57 +142,64 @@
         </p>
 
         <article
-          class="relative my-8 flex h-full flex-col bg-cover object-cover xl:flex-row"
+          id="article-wrapper"
+          class="relative my-12 hidden h-full flex-col xl:flex-row xl:items-center"
         >
-          <img
-            src="https://www.greenpeace.org/static/planet4-indonesia-stateless/2022/08/9e2d5b3d-gp1swkop_.jpg"
-            alt="Image"
-            class="bg-cover object-cover"
-          />
+          <div class="w-full xl:h-[600px] xl:max-h-[600px] xl:w-[660px]">
+            <img
+              src=""
+              alt="Greenpeace Image"
+              class="min-h-full min-w-full bg-cover object-cover shadow-xl"
+              id="article-image"
+            />
+          </div>
 
           <div
-            class="relative mt-4 bg-white p-4 font-montserrat shadow-shadow-card-with-illustration md:p-8 xl:relative xl:right-8 xl:mt-0 2xl:max-w-xl"
+            class="relative mt-4 bg-white p-4 font-montserrat shadow-shadow-card-with-illustration md:p-8 xl:relative xl:right-8 xl:mt-0 xl:max-w-lg 2xl:max-w-xl"
           >
             <div
               class="absolute -right-4 -bottom-4 top-0 left-0 -z-10 bg-[url(/src/assets/images/green-full-artboard.png)] shadow-shadow-card-with-illustration xl:-right-6 xl:-bottom-6"
             ></div>
             <div class="flex flex-col gap-4">
-              <div class="">
+              <!-- Article header -->
+              <div id="article-header">
                 <h1
                   class="text-lg font-bold text-green-gp-500 sm:text-2xl lg:text-4xl"
-                >
-                  Yang Hilang dari Pidato Kenegaraan Presiden Jokowi
-                </h1>
-                <h3
-                  class="my-2 font-source-sans-pro text-xs font-bold text-black-gp-100 md:text-base"
-                >
-                  Sherina Redjo • 19 Agustus 2022
-                </h3>
+                  id="article-title"
+                ></h1>
+                <div class="my-2 flex items-center gap-1">
+                  <h3
+                    id="article-author"
+                    class="font-source-sans-pro text-xs font-bold text-black-gp-100 md:text-base"
+                  ></h3>
+                  <h3
+                    class="font-source-sans-pro text-xs font-bold text-black-gp-100 md:text-base"
+                  >
+                    •
+                  </h3>
+
+                  <h3
+                    class="font-source-sans-pro text-xs font-bold text-black-gp-100 md:text-base"
+                    id="article-date"
+                  ></h3>
+                </div>
               </div>
 
-              <div class="font-medium">
+              <!-- Article body -->
+              <div class="font-medium" id="article-description">
                 <p
                   class="font-base my-2 text-sm text-black-gp-100 lg:text-base"
-                >
-                  Sebagai bagian dari rangkaian peringatan HUT Kemerdekaan,
-                  Presiden menyampaikan pidato kenegaraan di hadapan sidang
-                  tahunan MPR-RI. Tentu saja isinya didominasi klaim
-                  keberhasilan.
-                </p>
+                ></p>
                 <p
                   class="font-base my-2 text-sm text-black-gp-100 lg:text-base"
-                >
-                  Misal klaim keberhasilannya dalam menangani krisis global dan
-                  salah satu negara dengan jumlah vaksinasi terbesar. Selain
-                  itu, Presiden juga menyampaikan kekuatan besar Indonesia dalam
-                  hal bonus demografi dan kekayaan sumber daya alam yang
-                  melimpah. Hanya saja ada banyak hal penting lain yang luput
-                  disebut.
-                </p>
+                ></p>
               </div>
+
+              <!-- Article link -->
               <a
                 href="#"
                 class="group flex items-center text-xs font-bold text-submarine-gp-500 hover:brightness-75"
+                id="article-link"
               >
                 Baca Selengkapnya
                 <i class="mx-1 duration-200 group-hover:mx-2">
@@ -214,8 +221,14 @@
                 </i>
               </a>
 
-              <div class="my-4 flex items-center gap-4">
-                <button type="button">
+              <!-- Article controls -->
+              <div class="my-4 flex items-center gap-4" id="article-controls">
+                <button
+                  type="button"
+                  id="prev-article-button"
+                  class="disabled:cursor-not-allowed disabled:opacity-20"
+                  disabled
+                >
                   <svg
                     width="22"
                     height="22"
@@ -231,10 +244,22 @@
                     />
                   </svg>
                 </button>
-                <h3 class="font-bold tracking-widest">
-                  <span class="text-green-gp-500">1</span>/4
+                <h3 class="font-bold tracking-widest" id="article-number">
+                  <span
+                    class="text-green-gp-500"
+                    id="current-article-number"
+                    data-current-article-number="1"
+                  >
+                    1 </span
+                  >/
+                  <span id="total-article"></span>
                 </h3>
-                <button type="button">
+
+                <button
+                  type="button"
+                  id="next-article-button"
+                  class="disabled:cursor-not-allowed disabled:opacity-20"
+                >
                   <svg
                     width="22"
                     height="22"
@@ -254,6 +279,23 @@
             </div>
           </div>
         </article>
+      </section>
+
+      <section
+        class="mt-32 flex w-full flex-col items-center justify-center gap-2 font-montserrat"
+      >
+        <h1 class="text-3xl font-bold text-green-gp-500 lg:text-4xl">
+          Menjadi Aktivis Digital
+        </h1>
+        <p
+          class="text-center text-xs text-black-gp-50 sm:text-sm md:w-3/4 lg:w-2/3 lg:text-base xl:w-3/4 xl:text-lg 2xl:w-[60%]"
+        >
+          Perkembangan zaman semakin dinamis, teknologi informasi salah satu
+          yang paling cepat berubah. Saat ini untuk menyuaraan isu-isu
+          perlindungan lingkungan tidak hanya melalui kegiatan konvensional
+          saja. Jadilah bagian dari aktivis digital untuk mengatakan isu
+          perlindungan lingkungan. Apa sih yang bisa kita lakukan di dunia.
+        </p>
       </section>
     </main>
 
