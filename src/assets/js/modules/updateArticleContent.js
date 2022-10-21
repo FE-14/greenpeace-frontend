@@ -1,3 +1,6 @@
+import { formatPublishedDate } from "./formatPublishedDate.js";
+import { createArticleUrl } from "./createArticleUrl.js";
+
 const createParagraph = (text) => {
   const paragraph = document.createElement("p");
   paragraph.classList.add(
@@ -10,24 +13,6 @@ const createParagraph = (text) => {
   paragraph.textContent = `${text}.`;
 
   return paragraph;
-};
-
-const formatPublishedDate = (postDate) => {
-  const publishedDate = new Date(postDate).toLocaleDateString("id-Id", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-  return publishedDate;
-};
-
-const createArticleUrl = (id) => {
-  const { href } = window.location;
-  const params = new URLSearchParams();
-
-  params.append("article_id", id);
-
-  return `${href}blog/index.html?${params}`;
 };
 
 export const updateArticleContent = (currentArticleNumber, articleData) => {
