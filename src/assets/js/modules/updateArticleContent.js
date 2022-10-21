@@ -27,7 +27,7 @@ const createArticleUrl = (id) => {
 
   params.append("article_id", id);
 
-  return `${href}artikel/index.html?${params}`;
+  return `${href}blog/index.html?${params}`;
 };
 
 export const updateArticleContent = (currentArticleNumber, articleData) => {
