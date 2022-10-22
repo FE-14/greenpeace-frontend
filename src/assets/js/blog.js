@@ -25,7 +25,10 @@ articlePostDataPromise.then((data) => {
   console.log(data);
   blogTitleElement.textContent = data.title;
   blogAuthorElement.textContent = data.authorName;
-  blogWriterElement.textContent = data.authorName;
+  blogWriterElement.innerHTML = `
+  <h3>Ditulis oleh</h3>
+  <h2 class="text-2xl font-bold text-black-gp-100">${data.authorName}</h2>
+  `;
   blogPostdateElement.textContent = formatPublishedDate(data.postDate);
   blogDescElement.textContent = data.postDescription;
   blogTagsElement.innerHTML = createTagElements(data.tags);
