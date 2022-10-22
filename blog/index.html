@@ -111,14 +111,14 @@
       </div>
     </header>
 
-    <main id="flex-[1]" class="my-16 flex items-center justify-center">
+    <main class="my-16 flex flex-1 items-center justify-center p-4">
       <!-- Blog -->
-      <section id="blog-wrapper" class="w-1/2">
+      <section id="blog-wrapper" class="md:w-10/12 lg:w-1/2">
         <!-- Blog Detail -->
         <div id="detail-wrapper" class="my-6">
           <h1
             id="blog-title"
-            class="mb-6 font-montserrat text-4xl font-bold text-black-gp-100"
+            class="mb-6 font-montserrat text-2xl font-bold text-black-gp-100 lg:text-4xl"
           ></h1>
           <div id="blog-detail" class="font-source-sans-pro">
             <p id="blog-author" class="text-sm font-bold text-black-gp-100"></p>
@@ -127,21 +127,19 @@
         </div>
         <!-- Blog Content -->
         <p id="blog-desc" class="my-6 mb-16 font-source-sans-pro text-lg"></p>
-        <img id="blog-img" class="my-6 object-cover" />
-        <p id="blog-content" class="my-6 font-source-sans-pro text-lg"></p>
+        <img id="blog-img" class="my-6 w-full object-cover" />
+        <p
+          id="blog-content"
+          class="my-6 flex flex-col gap-4 font-source-sans-pro text-lg"
+        ></p>
         <div
           id="tags-wrapper"
           class="mt-12 mb-24 flex gap-5 font-source-sans-pro"
         ></div>
         <div
           class="mb-20 flex flex-col gap-3 text-sm text-black-gp-secondary-black-100"
-        >
-          <h3>Ditulis oleh</h3>
-          <h2
-            id="blog-writer"
-            class="text-2xl font-bold text-black-gp-100"
-          ></h2>
-        </div>
+          id="blog-writer"
+        ></div>
       </section>
     </main>
 
@@ -189,8 +187,12 @@
             <a href="https://www.instagram.com/greenpeaceid/"
               ><i class="bx bxl-instagram-alt hover:brightness-75"></i
             ></a>
-            <a href="https://twitter.com/greenpeaceid"><i class="bx bxl-twitter hover:brightness-75"></i></a>
-            <a href="https://www.youtube.com/greenpeaceindonesia"><i class="bx bxl-youtube hover:brightness-75"></i></a>
+            <a href="https://twitter.com/greenpeaceid"
+              ><i class="bx bxl-twitter hover:brightness-75"></i
+            ></a>
+            <a href="https://www.youtube.com/greenpeaceindonesia"
+              ><i class="bx bxl-youtube hover:brightness-75"></i
+            ></a>
           </div>
         </div>
       </div>
