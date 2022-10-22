@@ -31,11 +31,11 @@ Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkunga
 
 ## Team Members
 
-| Name              | Role                   | GitHub URL                                           |
-| ----------------- | ---------------------- | ---------------------------------------------------- |
-| Ersan Karimi      | Lead, Frontend, Design | [@ersankarimi](https://github.com/ersankarimi)       |
-| Intan Permatasari | Frontend, Design       | [@intanpermata11](https://github.com/intanpermata11) |
-| Meilyana Anisa    | Frontend Design        | [@meilyanaanisa](https://github.com/meilyanaanisa)   |
+| Name                   | Role                   | GitHub URL                                           |
+| ---------------------- | ---------------------- | ---------------------------------------------------- |
+| Ersan Karimi           | Lead, Frontend, Design | [@ersankarimi](https://github.com/ersankarimi)       |
+| Intan Permatasari      | Frontend, Design       | [@intanpermata11](https://github.com/intanpermata11) |
+| Meilyana Anisa Mawarti | Frontend Design        | [@meilyanaanisa](https://github.com/meilyanaanisa)   |
 
 ## Tech Stack
 
