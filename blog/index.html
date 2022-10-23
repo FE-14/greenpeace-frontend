@@ -111,61 +111,36 @@
       </div>
     </header>
 
-    <main id="flex-[1]">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas aliquid
-      blanditiis asperiores? Neque quasi quam sequi asperiores totam quod
-      tempora nihil non? Eaque veniam ad, rem rerum odit iusto delectus totam
-      amet neque repudiandae eum tempora reiciendis quisquam est quas fuga
-      officia quibusdam quasi dolor nam deserunt. Ex vero perspiciatis deleniti
-      eligendi porro maiores? Veniam, nulla deleniti perferendis repudiandae
-      laborum sint odio soluta tempora incidunt ad optio iusto nam nisi rerum
-      impedit! Unde ipsam iste repellat eligendi asperiores beatae similique,
-      quas illum officiis, enim autem aspernatur eaque quod tempora fuga vel
-      alias libero nobis. Dolore sint recusandae quo. Voluptatibus, saepe. Dolor
-      quam maxime ducimus architecto quis nisi ipsum hic earum labore
-      accusantium, quia commodi quidem quas minima tempora modi officiis
-      molestias cum. Laboriosam ipsam quod nihil fugit voluptas nobis alias
-      dicta porro vel perferendis nam expedita itaque, doloribus architecto,
-      odit aliquam inventore, minima illo est magni? Provident nostrum eius
-      cumque consequuntur veritatis neque ex aspernatur error ullam esse
-      officiis harum, atque odio quisquam eligendi. Quae, eligendi accusantium
-      ut, neque vel soluta quaerat sequi tenetur nihil optio consequatur nam
-      veritatis saepe! Et, deserunt cupiditate saepe harum consequuntur
-      obcaecati officia aspernatur necessitatibus quas laboriosam commodi?
-      Beatae enim sed nulla laboriosam ut voluptatem aliquam a delectus nemo
-      esse excepturi molestiae, maiores temporibus dolores consectetur!
-      Asperiores labore culpa ratione, illo, atque praesentium quas non id
-      officiis saepe voluptate voluptatem sit. Magnam, doloremque impedit
-      consequuntur illo cumque, atque tempora, magni consequatur fugiat incidunt
-      inventore a iure commodi facilis! Porro dolorem ipsa odio cupiditate
-      itaque asperiores quibusdam delectus facilis quisquam repudiandae tempore
-      molestias soluta saepe sed consequuntur, nesciunt perferendis qui a.
-      Corporis quidem magnam ea sed. Exercitationem, laudantium fugiat
-      praesentium magnam, illo nobis consectetur totam adipisci numquam unde
-      natus ipsam eligendi, veniam sapiente enim aperiam aliquam blanditiis
-      velit aspernatur necessitatibus eos sequi aliquid. Accusamus nulla, in
-      dolorem adipisci eligendi voluptatum, deserunt sapiente obcaecati
-      reprehenderit culpa fugit consequuntur sit soluta non commodi dolore nihil
-      excepturi beatae aspernatur enim est sunt nemo necessitatibus quas.
-      Architecto rem, obcaecati earum iusto vitae accusamus tenetur, aperiam
-      nulla corrupti aut rerum modi dicta placeat libero voluptate, sit mollitia
-      quaerat error asperiores quibusdam consequuntur aspernatur saepe ipsum.
-      Quibusdam magni quae ipsam, omnis dolorum repellat. Deserunt excepturi
-      laborum voluptatem molestiae consectetur magnam impedit distinctio sint
-      quidem obcaecati, quos eum sed praesentium provident odio autem
-      perspiciatis pariatur, molestias commodi voluptate accusantium? Quaerat
-      distinctio placeat delectus nesciunt officia? Expedita quia ut cum aliquid
-      hic, tempora error numquam sunt itaque libero provident velit in nam
-      perferendis cumque atque assumenda veritatis magnam, molestias deserunt
-      optio. Voluptate accusamus ducimus quae quos numquam quasi asperiores
-      reiciendis, dolorem non, nostrum nulla omnis eius dignissimos, natus atque
-      quis ab excepturi. Id itaque fugit, illum quo mollitia ab consequatur,
-      repudiandae iste sit, quae laboriosam iusto deserunt. Consequatur aliquid
-      doloribus id dolore corrupti nisi nemo fuga quos, at unde sequi veniam
-      laudantium nobis distinctio facilis amet cupiditate quidem. Ut quibusdam
-      recusandae aperiam suscipit eligendi id nobis consequuntur soluta beatae
-      blanditiis, magni, aliquam asperiores libero modi animi laudantium?
-      Tenetur, nulla expedita? Numquam beatae saepe natus!
+    <main class="my-16 flex flex-1 items-center justify-center p-4">
+      <!-- Blog -->
+      <section id="blog-wrapper" class="md:w-10/12 lg:w-1/2">
+        <!-- Blog Detail -->
+        <div id="detail-wrapper" class="my-6">
+          <h1
+            id="blog-title"
+            class="mb-6 font-montserrat text-2xl font-bold text-black-gp-100 lg:text-4xl"
+          ></h1>
+          <div id="blog-detail" class="font-source-sans-pro">
+            <p id="blog-author" class="text-sm font-bold text-black-gp-100"></p>
+            <p id="blog-postdate" class="text-black-gp-secondary-black-100"></p>
+          </div>
+        </div>
+        <!-- Blog Content -->
+        <p id="blog-desc" class="my-6 mb-16 font-source-sans-pro text-lg"></p>
+        <img id="blog-img" class="my-6 w-full object-cover" />
+        <p
+          id="blog-content"
+          class="my-6 flex flex-col gap-4 font-source-sans-pro text-lg"
+        ></p>
+        <div
+          id="tags-wrapper"
+          class="mt-12 mb-24 flex gap-5 font-source-sans-pro"
+        ></div>
+        <div
+          class="mb-20 flex flex-col gap-3 text-sm text-black-gp-secondary-black-100"
+          id="blog-writer"
+        ></div>
+      </section>
     </main>
 
     <footer class="flex w-full flex-col items-center bg-green-900 py-8">
@@ -206,14 +181,18 @@
         >
           <h2 class="text-xl font-semibold md:text-2xl">Contact Us</h2>
           <div class="flex items-center gap-4 text-xl xl:text-2xl">
-            <a href="#"
+            <a href="https://www.facebook.com/GreenpeaceIndonesia/"
               ><i class="bx bxl-facebook-circle hover:brightness-75"></i
             ></a>
-            <a href="#"
+            <a href="https://www.instagram.com/greenpeaceid/"
               ><i class="bx bxl-instagram-alt hover:brightness-75"></i
             ></a>
-            <a href="#"><i class="bx bxl-twitter hover:brightness-75"></i></a>
-            <a href="#"><i class="bx bxl-youtube hover:brightness-75"></i></a>
+            <a href="https://twitter.com/greenpeaceid"
+              ><i class="bx bxl-twitter hover:brightness-75"></i
+            ></a>
+            <a href="https://www.youtube.com/greenpeaceindonesia"
+              ><i class="bx bxl-youtube hover:brightness-75"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -234,6 +213,6 @@
     </footer>
 
     <!-- JavaScript Scripts -->
-    <script type="module" src="/src/assets/js/index.js"></script>
+    <script type="module" src="/src/assets/js/blog.js"></script>
   </body>
 </html>
