@@ -12,14 +12,18 @@ Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkunga
 
 [https://greenpeace.netlify.app/](https://greenpeace.netlify.app/)
 
+### Development / Staging
+
+[https://greenpeace-staging.netlify.app/](https://greenpeace-staging.netlify.app/)
+
 ### Local
 
 -
 
 ### Design
 
-- Figma Mockup           : [Figma Mockup Link](https://www.figma.com/file/aI1EYZmKVtY4N4LioeZpt0/Halo-Buku-Design)
-- Figma Prototype        :
+- Figma Mockup : [Figma Mockup Link](https://www.figma.com/file/MX4CVAmrUe4FrkFrOmVDgU/Greenpeace-Mockups?node-id=119%3A31011)
+- Figma Prototype :
 - Wireframes (Whimsical) : [Wireframes Link](https://whimsical.com/greenpeace-wireframe-PF2tuqF2hMAvC8R775c7Xa@7YNFXnKbYkjeN7qQXEaz4)
 
 ## Main Features
