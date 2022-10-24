@@ -138,7 +138,68 @@
       </div>
     </header>
 
-    <main class="my-12 flex flex-1 flex-col gap-12"></main>
+    <main class="relative my-8 flex flex-1 flex-col">
+      <section
+        id="search-container"
+        class="flex w-full flex-col items-center justify-center py-4 px-2 sm:px-6"
+      >
+        <div
+          class="flex w-full flex-col gap-8 sm:w-10/12 md:w-3/4 xl:w-1/2 2xl:w-[42.5%]"
+        >
+          <form
+            class="flex w-full items-center justify-center gap-2 bg-white p-2 shadow-shadow-card-with-illustration focus-within:outline focus-within:outline-1 focus-within:outline-green-200 md:p-4"
+            id="search-article-form"
+          >
+            <label for="search-article-title" class="p-0">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYdJREFUSEu9ldFRwkAQhv/bjL5KCfiQGZ/C0UHoQCvQDsAOtIPQgXZgB2IF3iwvDnmQEsizQ8455gIHJHcgwX1LYP/vv93bjcCZQ5xZH42AGym7y7IcAkgBSGtEAZhEROMvpeaHmKsFxEmSATDivshy5scQZA8Q93oKWvds4iuIslwp4xyxlBJlOQJwX50oZ+77IFsAx3kBorQS3hWwoAmAKwDjnNlAa2MNsDX/Xv2LqN8kXqlYyKd5joium3qyBjjuvY5cm3GSvNhyNeZsAFXtD3BfcwrV1Av3BNok5sxHzUacJN68tgBFztyp63JbJfrImc1A7sX/NfmEa1pERDJ4TVeTulkRCxANAoP2DqAjgOcZ81Nw0NZXz10VQrxAiPHWqtB6CK0fHEH1QzSYK7Xw9mBngELLrhBApoW4tXurERJa1yMIkVqRAoBZeioiykzNu1J2LrSe+CBHDVVdCUKQkwEG6kKE1nez6fStMtMKoIJcLpepK27etwY4+Jr6vk5/+e3sJ/gF3d7rGQuezwwAAAAASUVORK5CYII="
+              />
+            </label>
+            <input
+              type="search"
+              name="search-article-title"
+              id="search-article-title"
+              class="w-full appearance-none bg-transparent p-2 focus:outline-none"
+              placeholder="Telusuri judul ..."
+            />
+          </form>
+          <div
+            class="flex w-full flex-wrap items-center justify-center gap-8 px-8 xs:gap-x-16 sm:flex sm:justify-between sm:gap-2 sm:gap-x-0 sm:px-0 md:mt-4 md:justify-around"
+          >
+            <button
+              type="button"
+              class="px-3 py-1 text-lg duration-100 hover:scale-105 sm:px-4 md:py-2 lg:px-8 2xl:px-9"
+              data-tag="semua"
+            >
+              Semua
+            </button>
+            <button
+              type="button"
+              class="bg-green-50 px-3 py-1 text-lg text-submarine-gp-500 duration-100 hover:scale-105 sm:px-4 md:py-2 lg:px-8 2xl:px-9"
+              data-tag="krisis iklim"
+            >
+              Krisis Iklim
+            </button>
+            <button
+              type="button"
+              class="bg-green-50 px-3 py-1 text-lg text-submarine-gp-500 duration-100 hover:scale-105 sm:px-4 md:py-2 lg:px-8 2xl:px-9"
+              data-tag="hutan"
+            >
+              Hutan
+            </button>
+            <button
+              type="button"
+              class="bg-green-50 px-3 py-1 text-lg text-submarine-gp-500 duration-100 hover:scale-105 sm:px-4 md:py-2 lg:px-8 2xl:px-9"
+              data-tag="polusi"
+            >
+              Polusi
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-12 flex flex-col gap-12" id="article-list"></section>
+    </main>
 
     <footer class="flex w-full flex-col items-center bg-green-900 py-8">
       <div
@@ -210,6 +271,7 @@
     </footer>
 
     <!-- JavaScript Scripts -->
+    <script src="/src/assets/js/navbar.js"></script>
     <script type="module" src="/src/assets/js/artikel.js"></script>
   </body>
 </html>
