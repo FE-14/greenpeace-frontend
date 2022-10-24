@@ -1,7 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/assets/js/**/*.js", "./**/*.html"],
+  content: [
+    "./index.html",
+    "./src/assets/js/**/*.js",
+    "./search/index.html",
+    "./artikel/index.html",
+    "./blog/index.html",
+  ],
   theme: {
+    screens: {
+      xs: "375px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         white: "#ffffff",

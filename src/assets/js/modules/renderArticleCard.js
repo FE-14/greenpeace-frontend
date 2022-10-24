@@ -5,11 +5,10 @@ const createArticleCard = (articleData, index) => {
   const { title, authorName, postDescription, tags, postDate, id, imageUrl } =
     articleData;
 
-  const section = document.createElement("section");
-  section.id = id;
-  section.classList.add(
-    "mb-5",
-    "mt-5",
+  const article = document.createElement("article");
+  article.id = id;
+  article.classList.add(
+    "my-8",
     "flex",
     "flex-col",
     "gap-4",
@@ -19,11 +18,11 @@ const createArticleCard = (articleData, index) => {
     "lg:justify-center"
   );
 
-  section.innerHTML = `
+  article.innerHTML = `
   <img
           src="${imageUrl}"
           alt="Article Cover"
-          class="mt-4 min-w-[600px] max-w-[600px] min-h-[400px] max-h-[400px] bg-cover object-cover shadow-lg sm:mt-6 sm:object-cover sm:object-center  ${
+          class="mt-4 h-64 lg:min-w-[600px] lg:max-w-[600px] lg:min-h-[400px] lg:max-h-[400px] bg-cover object-cover shadow-lg sm:mt-6 sm:object-cover sm:object-center  ${
             index % 2 === 0 && "lg:order-2"
           }"
         />
@@ -63,11 +62,11 @@ const createArticleCard = (articleData, index) => {
         </div>
   `;
 
-  return section;
+  return article;
 };
 
 export const renderArticleCard = (articleData, index) => {
-  const mainElement = document.querySelector("main");
+  const sectionElement = document.querySelector("section#article-list");
 
-  mainElement.appendChild(createArticleCard(articleData, index));
+  sectionElement.appendChild(createArticleCard(articleData, index));
 };
