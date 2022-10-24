@@ -3,6 +3,7 @@ import {
   renderArticleCard,
   useState,
   updateSelectedTagButtons,
+  filterArticlesByCategory,
   filterArticlesByTitle,
 } from "./modules/index.js";
 
