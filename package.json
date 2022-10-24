@@ -1,6 +1,6 @@
 {
   "name": "greenpeace",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkungan hidup dan hak asasi manusia. Kami tim FE-14 mendapatkan Challenge Partner dari Greenpeace untuk membuat sebuah website yang dapat membantu mereka menyelesaikan masalah dan isu permasalahan lainnya.",
   "main": "index.js",
