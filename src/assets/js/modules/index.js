@@ -4,3 +4,6 @@ export * from "./updateArticleContent.js";
 export * from "./renderArticleCard.js";
 export * from "./formatPublishedDate.js";
 export * from "./createTagElements.js";
+export * from "./updateSelectedTagButtons.js";
+export * from "./filterArticlesByCategory.js";
+export * from "./filterArticlesByTitle.js";
