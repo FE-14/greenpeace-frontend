@@ -22,7 +22,6 @@ let [articlePostDataPromise] = useState(
 );
 
 articlePostDataPromise.then((data) => {
-  console.log(data);
   blogTitleElement.textContent = data.title;
   blogAuthorElement.textContent = data.authorName;
   blogWriterElement.innerHTML = `

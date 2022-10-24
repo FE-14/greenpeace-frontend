@@ -1,11 +1,11 @@
 {
   "name": "greenpeace",
-  "version": "0.1.0",
+  "version": "0.8.6",
   "private": true,
   "description": "Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkungan hidup dan hak asasi manusia. Kami tim FE-14 mendapatkan Challenge Partner dari Greenpeace untuk membuat sebuah website yang dapat membantu mereka menyelesaikan masalah dan isu permasalahan lainnya.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/assets/css/index.css -o ./src/assets/css/output.css --watch",
+    "dev": "npx prettier --write . && npx tailwindcss -i ./src/assets/css/index.css -o ./src/assets/css/output.css --watch",
     "build": "npx prettier --write . && npx tailwindcss -i ./src/assets/css/index.css -o ./src/assets/css/output.css --minify",
     "format": "npx prettier --write ."
   },
