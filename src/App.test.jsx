@@ -11,7 +11,7 @@ describe("App component renders", () => {
     expect(element).toBeInTheDocument();
   });
 
-  test("The heading text should equals to 'Hello'", () => {
+  test("The heading text should equals to 'App'", () => {
     render(<App />);
     const headingElement = screen.getByText("App");
 
