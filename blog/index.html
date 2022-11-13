@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/assets/css/output.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <title>Blog | Greenpeace Indonesia</title>
+  </head>
+  <body class="flex min-h-screen flex-col overflow-x-hidden">
+    <header class="sticky top-0 left-0 z-50 font-montserrat">
+      <!-- Navbar item -->
+      <div
+        class="flex w-full items-center justify-between bg-green-800/90 py-4 px-8 text-white backdrop-blur-[2px] lg:py-8 lg:px-16"
+        id="navbar-container"
+      >
+        <a href="/"
+          ><img
+            src="/src/assets/images/greenpeace-logo-white.png"
+            alt="Greenpeace Logo"
+            class="w-44 md:w-48 lg:w-full"
+        /></a>
+
+        <button type="button" class="p-2 lg:hidden" id="btn-open-navbar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-8 w-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+
+        <nav
+          class="absolute left-[30%] right-0 -top-[100vh] z-[9999] flex h-screen flex-col items-center justify-center gap-16 bg-green-800/90 p-4 backdrop-blur-md transition-all duration-200 lg:static lg:h-full lg:w-1/2 lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:bg-transparent lg:backdrop-blur-none"
+        >
+          <button
+            type="button"
+            class="absolute left-[45%] bottom-16 lg:hidden"
+            id="btn-close-sidebar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-11 w-11"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+
+          <!-- Navlink -->
+          <ul>
+            <li>
+              <a
+                href="/artikel"
+                class="group text-2xl font-semibold hover:brightness-75"
+                >Artikel
+                <hr
+                  class="h-1 w-1/2 bg-green-800 duration-200 group-hover:w-full"
+              /></a>
+            </li>
+          </ul>
+
+          <!-- Search field -->
+          <form
+            class="flex w-full items-center gap-3 lg:w-1/2"
+            id="navbar-form"
+          >
+            <label for="search" class="border-r-2 px-3 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </label>
+            <input
+              type="search"
+              name="search-field"
+              id="search-field"
+              class="w-full appearance-none rounded-md bg-transparent p-2 text-white outline outline-1 outline-gray-100/75 placeholder:text-white lg:outline-none lg:focus:outline-none"
+              placeholder="Telusuri ..."
+              autocomplete="off"
+            />
+          </form>
+        </nav>
+      </div>
+    </header>
+
+    <main class="my-16 flex flex-1 items-center justify-center p-4">
+      <!-- Blog -->
+      <section id="blog-wrapper" class="md:w-10/12 lg:w-1/2">
+        <!-- Blog Detail -->
+        <div id="detail-wrapper" class="my-6">
+          <h1
+            id="blog-title"
+            class="mb-6 font-montserrat text-2xl font-bold text-black-gp-100 lg:text-4xl"
+          ></h1>
+          <div id="blog-detail" class="font-source-sans-pro">
+            <p id="blog-author" class="text-sm font-bold text-black-gp-100"></p>
+            <p id="blog-postdate" class="text-black-gp-secondary-black-100"></p>
+          </div>
+        </div>
+        <!-- Blog Content -->
+        <p id="blog-desc" class="my-6 mb-16 font-source-sans-pro text-lg"></p>
+        <img id="blog-img" class="my-6 w-full object-cover" />
+        <p
+          id="blog-content"
+          class="my-6 flex flex-col gap-4 font-source-sans-pro text-lg"
+        ></p>
+        <div
+          id="tags-wrapper"
+          class="mt-12 mb-24 flex gap-5 font-source-sans-pro"
+        ></div>
+        <div
+          class="mb-20 flex flex-col gap-3 text-sm text-black-gp-secondary-black-100"
+          id="blog-writer"
+        ></div>
+      </section>
+    </main>
+
+    <footer class="flex w-full flex-col items-center bg-green-900 py-8">
+      <div
+        class="container flex w-full flex-col items-center justify-between px-8 lg:flex-row"
+      >
+        <!-- Links for article content -->
+        <div
+          class="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-center"
+        >
+          <h2
+            class="border-b-2 border-b-green-400 font-montserrat text-xl font-bold text-green-400 md:text-2xl"
+          >
+            Artikel
+          </h2>
+
+          <ul
+            class="flex items-center gap-4 text-white md:gap-8 lg:flex-col lg:gap-2"
+          >
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Semua</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Krisis Iklim</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Hutan</a>
+            </li>
+            <li>
+              <a href="#" class="hover:brightness-[80%]">Polusi</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact content -->
+        <div
+          class="mb-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-3 xl:gap-4"
+        >
+          <h2 class="text-xl font-semibold md:text-2xl">Contact Us</h2>
+          <div class="flex items-center gap-4 text-xl xl:text-2xl">
+            <a href="https://www.facebook.com/GreenpeaceIndonesia/"
+              ><i class="bx bxl-facebook-circle hover:brightness-75"></i
+            ></a>
+            <a href="https://www.instagram.com/greenpeaceid/"
+              ><i class="bx bxl-instagram-alt hover:brightness-75"></i
+            ></a>
+            <a href="https://twitter.com/greenpeaceid"
+              ><i class="bx bxl-twitter hover:brightness-75"></i
+            ></a>
+            <a href="https://www.youtube.com/greenpeaceindonesia"
+              ><i class="bx bxl-youtube hover:brightness-75"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom content -->
+      <div class="flex w-full items-center">
+        <img
+          src="/src/assets/images/greenpeace-logo-white.png"
+          alt="Greenpeace Logo"
+          class="absolute left-8 h-8 bg-green-900 px-4 md:left-16 md:h-11 lg:px-12"
+        />
+        <img
+          src="/src/assets/images/white-line-illustration.png"
+          alt="Artboard Illustration"
+          class="h-8 w-full bg-cover bg-repeat-x object-cover md:h-10"
+        />
+      </div>
+    </footer>
+
+    <!-- JavaScript Scripts -->
+    <script src="/src/assets/js/navbar.js"></script>
+
+    <script type="module" src="/src/assets/js/navbarSearch.js"></script>
+    <script type="module" src="/src/assets/js/blog.js"></script>
+  </body>
+</html>
