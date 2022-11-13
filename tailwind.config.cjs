@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/assets/js/**/*.js",
-    "./search/index.html",
-    "./artikel/index.html",
-    "./blog/index.html",
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     screens: {
       xs: "375px",
@@ -60,5 +54,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("prettier-plugin-tailwindcss")],
+
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  plugins: [require("@tailwindcss/forms")],
 };
