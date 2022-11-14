@@ -10,9 +10,10 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+
     extend: {
       colors: {
-        white: "#ffffff",
+        white: "#FAF8FF",
         "black-gp": {
           50: "#2d3a3a",
           100: "#252e2e",
@@ -55,6 +56,10 @@ module.exports = {
     },
   },
 
-  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+    require("@tailwindcss/forms")({
+      strategy: "class", // only generate classes
+    }),
+  ],
 };
