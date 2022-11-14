@@ -53,6 +53,9 @@ module.exports = {
         "shadow-card-with-illustration": "0px 4px 20px 0px rgba(0,0,0,0.25)",
         "shadow-card-2": "0px 4px 20px 0px rgba(0,0,0,0.05)",
       },
+      backgroundImage: {
+        "homepage-hero": "url('/src/assets/images/homepage-hero.webp')",
+      },
     },
   },
 
