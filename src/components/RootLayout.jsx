@@ -4,10 +4,8 @@ import Navbar from "./Navbar";
 export default function RootLayout({ children }) {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-      <main className="flex-grow">{children}</main>
+      <Navbar />
+      <main className="mt-14 flex-grow">{children}</main>
       <Footer />
     </>
   );
