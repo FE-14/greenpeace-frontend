@@ -5,11 +5,11 @@
 
 @layer base {
   body {
-    @apply grid h-full w-full grid-cols-4 gap-4 bg-white md:grid-cols-8 md:gap-8 lg:grid-cols-12;
+    @apply h-full w-full bg-white;
   }
 
   #root {
-    @apply flex min-h-screen flex-col;
+    @apply flex min-h-screen flex-col overflow-hidden;
   }
 }
 
