@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="mt-14 flex-grow">{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </>
   );
