@@ -9,6 +9,7 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      "3xl": "1600px",
     },
 
     extend: {
@@ -55,6 +56,8 @@ module.exports = {
       },
       backgroundImage: {
         "homepage-hero": "url('/src/assets/images/homepage-hero.webp')",
+        "green-full-artboard":
+          "url(/src/assets/images/green-full-artboard.png)",
       },
     },
   },
