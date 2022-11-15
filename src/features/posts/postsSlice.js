@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-  postsData: [],
+  postData: [],
   isLoading: true,
 };
 
@@ -28,7 +28,7 @@ const postsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getPostsData.fulfilled, (state, action) => {
-      state.postsData = action.payload;
+      state.postData = action.payload;
       state.isLoading = false;
     });
     builder.addCase(getPostsData.rejected, (state, action) => {

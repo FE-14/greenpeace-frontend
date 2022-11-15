@@ -10,12 +10,12 @@ import {
 } from "./components";
 
 export default function Homepage() {
-  const { postsData, isLoading } = useSelector((store) => store.posts);
+  const { postData, isLoading } = useSelector((store) => store.posts);
   const { digitalActivistData } = useSelector((store) => store.homepage);
   const [currentArticleNumber, setCurrentArticleNumber] = useState(1);
   const currentArticle = useMemo(
-    () => postsData[currentArticleNumber - 1],
-    [currentArticleNumber, postsData]
+    () => postData[currentArticleNumber - 1],
+    [currentArticleNumber, postData]
   );
 
   return (
@@ -33,7 +33,7 @@ export default function Homepage() {
           descriptionText="Baca tentang beberapa kemenangan, tragedi, dan momen penting lainnya dari Greenpeace 50 tahun terakhir."
         >
           {isLoading && <h1>Loading ...</h1>}
-          {postsData && !isLoading && (
+          {postData && !isLoading && (
             <HomepageArticles
               key={currentArticle.id}
               {...currentArticle}
