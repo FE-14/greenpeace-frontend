@@ -1,4 +1,6 @@
 import classNames from "classnames";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from "prop-types";
 
 export default function ActivistDigitalCard({ id, title, description }) {
   return (
@@ -21,3 +23,9 @@ export default function ActivistDigitalCard({ id, title, description }) {
     </article>
   );
 }
+
+ActivistDigitalCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};

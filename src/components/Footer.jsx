@@ -5,6 +5,8 @@ import {
   AiOutlineTwitter,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from "prop-types";
 
 export default function Footer() {
   const contacts = [
@@ -101,3 +103,17 @@ function FooterLink({ to, type, className, target, children }) {
     </Link>
   );
 }
+
+FooterLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  type: PropTypes.string,
+  target: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+FooterLink.defaultProps = {
+  type: "",
+  target: "",
+  className: "",
+};

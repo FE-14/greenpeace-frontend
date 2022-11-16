@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from "prop-types";
+
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -10,3 +13,7 @@ export default function RootLayout({ children }) {
     </>
   );
 }
+
+RootLayout.propType = {
+  children: PropTypes.node.isRequired,
+};
