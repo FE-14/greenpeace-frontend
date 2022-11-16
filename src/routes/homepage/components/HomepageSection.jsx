@@ -7,7 +7,7 @@ export default function HomepageSection({
   children,
 }) {
   return (
-    <section className="basic-padding my-16 mx-auto flex w-full flex-col items-center justify-center gap-20 font-montserrat">
+    <section className="basic-padding mx-auto mb-24 mt-16 flex w-full flex-col items-center justify-center gap-16 font-montserrat">
       <div className="flex flex-col items-center gap-3 text-center font-montserrat">
         <h1 className="text-3xl font-bold tracking-wide text-green-gp-500 lg:text-4xl">
           {headerText}
