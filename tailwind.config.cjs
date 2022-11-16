@@ -9,10 +9,12 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      "3xl": "1600px",
     },
+
     extend: {
       colors: {
-        white: "#ffffff",
+        white: "#FAF8FF",
         "black-gp": {
           50: "#2d3a3a",
           100: "#252e2e",
@@ -52,9 +54,18 @@ module.exports = {
         "shadow-card-with-illustration": "0px 4px 20px 0px rgba(0,0,0,0.25)",
         "shadow-card-2": "0px 4px 20px 0px rgba(0,0,0,0.05)",
       },
+      backgroundImage: {
+        "homepage-hero": "url('/src/assets/images/homepage-hero.webp')",
+        "green-full-artboard":
+          "url(/src/assets/images/green-full-artboard.png)",
+      },
     },
   },
 
-  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+    require("@tailwindcss/forms")({
+      strategy: "class", // only generate classes
+    }),
+  ],
 };

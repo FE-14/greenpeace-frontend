@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply h-full w-full bg-white;
+  }
+
+  #root {
+    @apply flex min-h-screen flex-col overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .basic-padding {
+    @apply px-4 md:px-8 lg:px-12 xl:px-8 2xl:px-[112px];
+  }
+}
