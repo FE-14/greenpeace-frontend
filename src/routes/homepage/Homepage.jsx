@@ -20,12 +20,20 @@ export default function Homepage() {
 
   return (
     <>
-      <figure>
+      <figure className="relative">
         <img
           src={homepageHero}
           alt="Homepage Hero"
           className="-z-50 max-h-[776px] min-h-[286px] w-full bg-contain bg-no-repeat object-cover"
         />
+        <div className="absolute top-[45%] left-8 font-montserrat sm:left-10 md:left-20">
+          <h1 className="my-1 text-lg font-bold text-white sm:text-2xl md:text-4xl lg:my-4 lg:text-6xl">
+            Semesta ku jatuh
+          </h1>
+          <h1 className="my-1 text-lg font-bold text-white sm:text-2xl md:text-4xl lg:my-4 lg:text-6xl">
+            hati pada mu.
+          </h1>
+        </div>
       </figure>
       <div className="flex flex-col">
         <HomepageSection
@@ -61,12 +69,12 @@ export default function Homepage() {
             <img
               src="/src/assets/images/green-outline-half-artboard.png"
               alt="Artboard Ilustration"
-              className="absolute top-[calc(3rem+3rem)] hidden bg-contain xl:left-[10%] xl:block 3xl:left-[12%]"
+              className="absolute top-[calc(3rem+3rem)] hidden bg-contain xl:left-[8%] xl:block 3xl:left-[12%]"
             />
             <img
               src="/src/assets/images/green-outline-half-artboard.png"
               alt="Artboard Ilustration"
-              className="absolute bottom-[calc(3rem+3rem)] hidden rotate-180 bg-contain xl:right-[10%] xl:block 3xl:right-[12%]"
+              className="absolute bottom-[calc(3rem+3rem)] hidden rotate-180 bg-contain xl:right-[8%] xl:block 3xl:right-[12%]"
             />
             {digitalActivistData.map((data) => (
               <ActivistDigitalCard {...data} key={data.id} />
