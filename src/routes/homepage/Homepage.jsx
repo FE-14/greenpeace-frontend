@@ -2,7 +2,11 @@ import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useSelector } from "react-redux";
 
-import { homepageHero } from "../../assets";
+import {
+  greenBigOutlineHalfOutboard,
+  greenOutlineHalfArtboard,
+  homepageHero,
+} from "../../assets";
 
 import {
   ActivistDigitalCard,
@@ -90,22 +94,22 @@ export default function Homepage() {
         >
           <div className="relative flex w-full flex-col items-center gap-8 p-4 md:p-8 lg:p-12">
             <img
-              src="/src/assets/images/green-big-outline-half-artboard.png"
+              src={greenBigOutlineHalfOutboard}
               alt="Artboard Ilustration"
               className="absolute top-[calc(3rem+3rem)] bottom-0 hidden h-1/2 rotate-180 bg-cover object-contain lg:right-0 lg:top-[13%] lg:block lg:w-10/12 xl:top-[calc(3rem+3rem)] xl:right-0 xl:w-auto 2xl:right-0 3xl:right-[2%]"
             />
             <img
-              src="/src/assets/images/green-big-outline-half-artboard.png"
+              src={greenBigOutlineHalfOutboard}
               alt="Artboard Ilustration"
               className="absolute bottom-[calc(3rem+3rem)] hidden bg-cover object-contain lg:left-0 lg:bottom-[15%] lg:block lg:w-10/12 xl:-left-0 xl:bottom-[calc(3rem+3rem)] xl:w-auto 2xl:left-0 3xl:left-[2%]"
             />
             <img
-              src="/src/assets/images/green-outline-half-artboard.png"
+              src={greenOutlineHalfArtboard}
               alt="Artboard Ilustration"
               className="absolute top-[calc(3rem+3rem)] hidden bg-contain xl:left-[8%] xl:block 3xl:left-[12%]"
             />
             <img
-              src="/src/assets/images/green-outline-half-artboard.png"
+              src={greenOutlineHalfArtboard}
               alt="Artboard Ilustration"
               className="absolute bottom-[calc(3rem+3rem)] hidden rotate-180 bg-contain xl:right-[8%] xl:block 3xl:right-[12%]"
             />
