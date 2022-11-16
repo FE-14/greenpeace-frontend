@@ -1,11 +1,11 @@
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { HiOutlineSearch } from "react-icons/hi";
-import { Link, useSearchParams } from "react-router-dom";
-import classNames from "classnames";
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
+import { LayoutGroup } from "framer-motion";
 
-import { articleHero } from "../assets";
+import { articleHero } from "../../assets";
+
+import { ButtonCategory, SearchArticleBar } from "./components";
 
 export default function Articles() {
   const [searchParams] = useSearchParams();
@@ -65,86 +65,5 @@ export default function Articles() {
         </div>
       </section>
     </>
-  );
-}
-
-function SearchArticleBar() {
-  return (
-    <form
-      className="flex w-full items-center justify-center gap-2 bg-white p-2 shadow-shadow-card-with-illustration focus-within:outline focus-within:outline-1 focus-within:outline-green-200 md:p-4 lg:w-3/4 xl:w-3/5"
-      id="search-article-form"
-    >
-      <label
-        htmlFor="search-article-title"
-        className="flex w-[90%] items-center gap-3 text-black-gp-100 md:gap-4"
-      >
-        <HiOutlineSearch className="h-6 w-6 text-current" />
-        <input
-          type="search"
-          name="search-article-title"
-          id="search-article-title"
-          className="w-full appearance-none bg-transparent p-2 text-current focus:outline-none lg:text-lg"
-          placeholder="Telusuri judul ..."
-        />
-      </label>
-    </form>
-  );
-}
-
-function ButtonCategory({
-  category,
-  isSelected,
-  isCategoryOnHover,
-  setHoveredCategory,
-}) {
-  return (
-    <Link to={`?category=${category}`} className="relative">
-      <button
-        type="button"
-        className={classNames(
-          "bg flex w-full justify-center px-3 py-1 text-lg sm:px-4 md:py-2 lg:px-8 2xl:px-9",
-          {
-            " text-green-gp-100": isSelected,
-            " bg-green-gp-100/60 text-submarine-gp-500": !isSelected,
-          }
-        )}
-        onMouseEnter={() => setHoveredCategory(category)}
-      >
-        {category}
-      </button>
-      {isSelected && (
-        <AnimatePresence>
-          <motion.div
-            className="absolute inset-0 -z-10 bg-submarine-gp-500"
-            exit={{
-              opacity: 0,
-              scale: 0,
-            }}
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              transition: {
-                duration: 0.2,
-              },
-            }}
-          />
-        </AnimatePresence>
-      )}
-      {isCategoryOnHover && (
-        <AnimatePresence>
-          <motion.div
-            className="absolute inset-0 -z-10 bg-submarine-gp-500/30"
-            layoutId="hover-hightlight"
-            transition={{
-              duration: 0.2,
-            }}
-          />
-        </AnimatePresence>
-      )}
-    </Link>
   );
 }
