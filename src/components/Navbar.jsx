@@ -6,6 +6,7 @@ import {
   HiOutlineX,
 } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { greenpeaceLogoWhite } from "../assets";
@@ -78,8 +79,8 @@ export default function Navbar() {
               animate="visible"
               exit="exit"
             >
-              <li className="group text-2xl font-bold text-white hover:text-white/80 md:mr-20 md:text-lg">
-                <Link to="/" className="text-current">
+              <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
+                <Link to="/articles" className="text-current">
                   Artikel
                   <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
                 </Link>
@@ -105,16 +106,34 @@ export default function Navbar() {
 }
 
 function SearchBar() {
+  const disabled = true;
+
   return (
-    <form className="">
-      <label htmlFor="search-bar" className="flex items-center gap-2">
+    <form
+      className={classNames("md:ml-20", {
+        "opacity-40": disabled,
+        "opacity-100": !disabled,
+      })}
+    >
+      <label
+        htmlFor="search-bar"
+        className={classNames("flex items-center gap-2", {
+          "cursor-not-allowed": disabled,
+        })}
+      >
         <HiOutlineSearch className="h-6 w-6 text-white" />
         <HiOutlineMinus className="h-6 w-6 rotate-90 text-white" />
         <input
           type="search"
           id="search-bar"
-          className="form-input border-white bg-transparent text-white placeholder:text-sm placeholder:text-white/60 focus:border-current focus:ring-white/60 md:border-none md:placeholder:text-base md:focus:ring-0"
+          className={classNames(
+            "form-input border-white bg-transparent text-white placeholder:text-sm placeholder:text-white/60 focus:border-current focus:ring-white/60 md:border-none md:placeholder:text-base md:focus:ring-0",
+            {
+              "cursor-not-allowed": disabled,
+            }
+          )}
           placeholder="Telusuri ..."
+          disabled={disabled}
         />
       </label>
     </form>
