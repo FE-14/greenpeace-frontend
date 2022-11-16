@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
 
@@ -14,9 +15,11 @@ function App() {
   }, []);
 
   return (
-    <Root>
-      <Outlet />
-    </Root>
+    <HelmetProvider>
+      <Root>
+        <Outlet />
+      </Root>
+    </HelmetProvider>
   );
 }
 
