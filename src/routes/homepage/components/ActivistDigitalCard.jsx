@@ -17,7 +17,9 @@ export default function ActivistDigitalCard({ id, title, description }) {
         {id}
       </div>
       <div className="">
-        <h2 className="text-lg font-bold text-submarine-gp-500">{title}</h2>
+        <h2 className="text-lg font-bold text-submarine-gp-500 xl:text-xl">
+          {title}
+        </h2>
         <p className="font-source-sans-pro text-base">{description}</p>
       </div>
     </article>

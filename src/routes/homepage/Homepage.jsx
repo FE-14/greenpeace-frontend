@@ -63,7 +63,7 @@ export default function Homepage() {
           alt="Homepage Hero"
           className="-z-50 max-h-[776px] min-h-[286px] w-full bg-contain bg-no-repeat object-cover"
         />
-        <div className="absolute top-[45%] left-8 font-montserrat sm:left-10 md:left-20">
+        <div className="absolute top-[45%] left-8 font-montserrat sm:left-10 md:left-20 lg:left-32 xl:left-40 2xl:left-44">
           <h1 className="my-1 text-lg font-bold text-white sm:text-2xl md:text-4xl lg:my-4 lg:text-6xl">
             Semesta ku jatuh
           </h1>
