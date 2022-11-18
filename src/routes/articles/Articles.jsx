@@ -1,21 +1,40 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { LayoutGroup } from "framer-motion";
 
 import { articleHero } from "../../assets";
+import { getPostsData } from "../../features/posts/postsSlice";
 
-import { ButtonCategory, SearchArticleBar } from "./components";
+import {
+  ArticlesList,
+  ButtonCategory,
+  SearchArticleBar,
+  SkeletonArticles,
+} from "./components";
+
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Articles() {
   const [searchParams] = useSearchParams();
+
+  const dispatch = useDispatch();
+  const { postData, isLoading } = useSelector((store) => store.posts);
+
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+
+  const articlesCategory = ["Semua", "Krisis Iklim", "Hutan", "Polusi"];
+  const URL = import.meta.env.VITE_POSTS_API_1;
+
   const selectedCategory = useMemo(() => {
     const categoryParamsValue = searchParams.get("category");
     return categoryParamsValue || "Semua";
   }, [searchParams.get("category")]);
 
-  const [hoveredCategory, setHoveredCategory] = useState(null);
-  const articlesCategory = ["Semua", "Krisis Iklim", "Hutan", "Polusi"];
+  useEffect(() => {
+    dispatch(getPostsData(URL));
+  }, []);
 
   return (
     <>
@@ -47,6 +66,7 @@ export default function Articles() {
       </figure>
       <section className="basic-padding my-12 flex flex-col items-center justify-center gap-10">
         <SearchArticleBar />
+
         <div
           className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:gap-10"
           onMouseLeave={() => setHoveredCategory(null)}
@@ -63,6 +83,16 @@ export default function Articles() {
             ))}
           </LayoutGroup>
         </div>
+      </section>
+
+      <section className="basic-padding my-32 flex flex-col items-center justify-center gap-10">
+        {isLoading && <SkeletonArticles />}
+        {!isLoading && (
+          <ArticlesList
+            selectedCategory={selectedCategory}
+            postData={postData}
+          />
+        )}
       </section>
     </>
   );
