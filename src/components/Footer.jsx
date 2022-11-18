@@ -4,7 +4,7 @@ import {
   AiFillYoutube,
   AiOutlineTwitter,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
 
@@ -36,6 +36,7 @@ export default function Footer() {
 
   return (
     <footer className="flex w-full flex-col items-center bg-green-gp-900 py-8">
+      <ScrollRestoration />
       <div className="container flex w-full flex-col items-center justify-between px-8 lg:flex-row">
         <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-center">
           <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-2xl">
