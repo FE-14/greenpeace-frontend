@@ -17,7 +17,14 @@ function App() {
   return (
     <HelmetProvider>
       <Root>
-        <ScrollRestoration />
+        <ScrollRestoration
+          getKey={(location) => {
+            const paths = ["/articles"];
+            return paths.includes(location.pathname)
+              ? location.pathname
+              : location.key;
+          }}
+        />
         <Outlet />
       </Root>
     </HelmetProvider>
