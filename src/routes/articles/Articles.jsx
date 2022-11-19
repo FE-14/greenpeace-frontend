@@ -163,7 +163,18 @@ export default function Articles() {
 
       <section className="basic-padding my-12 flex flex-col items-center justify-center gap-10 lg:my-32">
         {isLoading && <SkeletonArticles />}
-        {!isLoading && (
+        {!isLoading && filteredPostData.length === 0 && (
+          <div className="my-8 flex flex-col gap-4 font-montserrat md:my-2">
+            <h1 className="text-xl font-bold">
+              Maaf, kami tidak dapat menemukan apa yang kamu cari.
+            </h1>
+            <ul className="list-inside list-disc font-source-sans-pro md:text-lg">
+              <li>Cek kesalahan dalam penulisan, dan coba pencarian lagi</li>
+              <li>Coba lakukan pencarian lain</li>
+            </ul>
+          </div>
+        )}
+        {isLoading && filteredPostData.length > 0 && (
           <ArticlesList
             selectedCategory={selectedCategory}
             postData={filteredPostData}
