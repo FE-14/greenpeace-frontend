@@ -7,16 +7,20 @@ export default function ButtonCategory({
   isSelected,
   isCategoryOnHover,
   setHoveredCategory,
+  isLoading,
 }) {
   return (
     <Link to={`?category=${category}`} className="relative" preventScrollReset>
       <button
         type="button"
+        disabled={isLoading}
         className={classNames(
           "bg flex w-full justify-center px-3 py-1 text-lg sm:px-4 md:py-2 lg:px-8 2xl:px-9",
           {
             " text-green-gp-100": isSelected,
             " bg-green-gp-100/60 text-submarine-gp-500": !isSelected,
+            "cursor-not-allowed": isLoading,
+            "cursor-pointer": !isLoading,
           }
         )}
         onMouseEnter={() => setHoveredCategory(category)}
