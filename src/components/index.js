@@ -1,5 +1,5 @@
 import ArticleCard from "./ArticleCard";
-import ReadMoreLink from "./ReadMoreLink";
+import ReadMoreArticleLink from "./ReadMoreArticleLink";
 import RootLayout from "./RootLayout";
 
-export { ArticleCard, ReadMoreLink, RootLayout };
+export { ArticleCard, ReadMoreArticleLink, RootLayout };

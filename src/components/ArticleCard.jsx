@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 import { formatPublishedDate } from "../libs";
 
-import ReadMoreLink from "./ReadMoreLink";
+import ReadMoreArticleLink from "./ReadMoreArticleLink";
 
 export default function ArticleCard({
   title,
@@ -54,7 +54,7 @@ export default function ArticleCard({
         <p className="font-source-sans-pro text-base font-medium sm:mt-5">
           {postDescription}
         </p>
-        <ReadMoreLink id={id} />
+        <ReadMoreArticleLink id={id} />
       </div>
     </article>
   );

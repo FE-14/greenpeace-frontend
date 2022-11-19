@@ -1,7 +1,7 @@
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-export default function ReadMoreLink({ id }) {
+export default function ReadMoreArticleLink({ id }) {
   return (
     <Link
       to={`/articles/${id}`}
