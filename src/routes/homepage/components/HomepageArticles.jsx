@@ -1,9 +1,10 @@
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
+
+import { ReadMoreArticleLink } from "../../../components";
 
 import ArticleDescriptionParagraph from "./ArticleDescriptionParagraph";
 
@@ -81,12 +82,7 @@ export default function HomepageArticles({
                   ))}
               </motion.div>
 
-              <Link
-                to={`articles/${id}`}
-                className="flex items-center gap-1 font-montserrat text-xs font-bold text-submarine-gp-500 duration-150 hover:gap-2 hover:brightness-[80%] md:text-sm"
-              >
-                Baca Selengkapnya <HiOutlineArrowRight className="h-4 w-4" />
-              </Link>
+              <ReadMoreArticleLink id={id} />
 
               <div className="flex items-center gap-4">
                 <button
