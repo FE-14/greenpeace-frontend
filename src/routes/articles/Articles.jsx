@@ -43,14 +43,12 @@ export default function Articles() {
           { q: searchQuery, category: searchParams.get("category") },
           { preventScrollReset: true }
         );
-
-        return;
+      } else {
+        setSearchParams(
+          { category: searchParams.get("category") },
+          { preventScrollReset: true }
+        );
       }
-
-      setSearchParams(
-        { category: searchParams.get("category") },
-        { preventScrollReset: true }
-      );
     },
     [search, searchQuery]
   );
