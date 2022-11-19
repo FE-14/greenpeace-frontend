@@ -9,7 +9,7 @@ export default function ButtonCategory({
   setHoveredCategory,
 }) {
   return (
-    <Link to={`?category=${category}`} className="relative">
+    <Link to={`?category=${category}`} className="relative" preventScrollReset>
       <button
         type="button"
         className={classNames(
