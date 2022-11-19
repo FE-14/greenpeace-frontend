@@ -8,10 +8,12 @@ import {
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from "prop-types";
 
 import { greenpeaceLogoWhite } from "../assets";
 
-export default function Navbar() {
+export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
     window.innerWidth < 768
   );
@@ -52,7 +54,15 @@ export default function Navbar() {
   }, [window.innerWidth]);
 
   return (
-    <header className="basic-padding fixed z-50 w-full  bg-green-gp-800/[35%] py-4 font-montserrat backdrop-blur-sm">
+    <header
+      className={classNames(
+        "basic-padding z-50 w-full bg-green-gp-800/[35%] py-4 font-montserrat backdrop-blur-sm",
+        {
+          fixed: !forErrorElement,
+          relative: forErrorElement,
+        }
+      )}
+    >
       <nav className="flex items-center justify-between">
         <figure>
           <Link to="/">
@@ -139,3 +149,11 @@ function SearchBar() {
     </form>
   );
 }
+
+Navbar.propTypes = {
+  forErrorElement: PropTypes.bool,
+};
+
+Navbar.defaultProps = {
+  forErrorElement: false,
+};

@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="flex-grow">{children}</main>
+      <main className="relative flex-grow">{children}</main>
       <Footer />
     </>
   );

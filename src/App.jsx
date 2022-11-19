@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { useDispatch } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 import { getPostsData } from "./features/posts/postsSlice";
 import { Root } from "./routes";
@@ -17,6 +17,14 @@ function App() {
   return (
     <HelmetProvider>
       <Root>
+        <ScrollRestoration
+          getKey={(location) => {
+            const paths = ["/articles"];
+            return paths.includes(location.pathname)
+              ? location.pathname
+              : location.key;
+          }}
+        />
         <Outlet />
       </Root>
     </HelmetProvider>

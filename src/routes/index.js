@@ -1,6 +1,7 @@
+import Articles from "./articles/Articles";
 import Homepage from "./homepage/Homepage";
-import Article from "./article";
-import Articles from "./articles";
+import Article from "./Article";
+import Error from "./Error";
 import Root from "./Root";
 
-export { Article, Articles, Homepage, Root };
+export { Article, Articles, Error, Homepage, Root };
