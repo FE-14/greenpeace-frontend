@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +24,7 @@ export default function Articles() {
   const dispatch = useDispatch();
   const { postData, isLoading } = useSelector((store) => store.posts);
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const articlesCategory = ["Semua", "Krisis Iklim", "Hutan", "Polusi"];
@@ -31,8 +32,34 @@ export default function Articles() {
 
   const selectedCategory = useMemo(() => {
     const categoryParamsValue = searchParams.get("category");
+
     return categoryParamsValue || "Semua";
   }, [searchParams.get("category")]);
+
+  const filteredPostData = useMemo(() => {
+    const searchQueryParamsValue = searchParams.get("q");
+    const categoryParamsValue = searchParams.get("category");
+    let data = [...postData];
+
+    if (searchQueryParamsValue) {
+      data = data.filter((post) => {
+        return post.title
+          .toLowerCase()
+          .includes(searchQueryParamsValue.toLowerCase());
+      });
+    }
+
+    if (categoryParamsValue) {
+      data =
+        categoryParamsValue === "Semua"
+          ? data
+          : data.filter((post) => {
+              return post.tags.includes(categoryParamsValue.toLowerCase());
+            });
+    }
+
+    return data;
+  }, [searchParams, postData]);
 
   const handleSearchQuerySubmit = useCallback(
     (event) => {
@@ -73,6 +100,12 @@ export default function Articles() {
 
     dispatch(getPostsData(URL));
   }, []);
+
+  useEffect(() => {
+    const searchQueryParamsValue = searchParams.get("q") || "";
+
+    setSearchQuery(searchQueryParamsValue);
+  }, [searchParams.get("q")]);
 
   return (
     <>
@@ -133,7 +166,7 @@ export default function Articles() {
         {!isLoading && (
           <ArticlesList
             selectedCategory={selectedCategory}
-            postData={postData}
+            postData={filteredPostData}
           />
         )}
       </section>
