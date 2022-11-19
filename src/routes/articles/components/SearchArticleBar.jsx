@@ -1,10 +1,16 @@
+import { memo } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 
-export default function SearchArticleBar() {
+export default memo(function SearchArticleBar({
+  searchQuery,
+  onSearchQeryChange,
+  onSearchQuerySubmit,
+}) {
   return (
     <form
       className="flex w-full items-center justify-center gap-2 bg-white p-2 shadow-shadow-card-with-illustration focus-within:outline focus-within:outline-1 focus-within:outline-green-200 md:p-4 lg:w-3/4 xl:w-3/5"
       id="search-article-form"
+      onSubmit={onSearchQuerySubmit}
     >
       <label
         htmlFor="search-article-title"
@@ -17,8 +23,10 @@ export default function SearchArticleBar() {
           id="search-article-title"
           className="w-full appearance-none bg-transparent p-2 text-current focus:outline-none lg:text-lg"
           placeholder="Telusuri judul ..."
+          onChange={onSearchQeryChange}
+          value={searchQuery}
         />
       </label>
     </form>
   );
-}
+});
