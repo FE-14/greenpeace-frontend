@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -9,8 +9,21 @@ export default function ButtonCategory({
   setHoveredCategory,
   isLoading,
 }) {
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
-    <Link to={`?category=${category}`} className="relative" preventScrollReset>
+    <Link
+      to={`/articles?${
+        searchParams.get("q") ? `q=${searchParams.get("q")}&` : ""
+      }category=${category}`}
+      className="relative"
+      onClick={() =>
+        setSearchParams({
+          q: searchParams.get("q"),
+          category,
+        })
+      }
+      preventScrollReset
+    >
       <button
         type="button"
         disabled={isLoading}
