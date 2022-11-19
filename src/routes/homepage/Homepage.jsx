@@ -17,7 +17,9 @@ import {
 export default function Homepage() {
   const { postData, isLoading } = useSelector((store) => store.posts);
   const { digitalActivistData } = useSelector((store) => store.homepage);
+
   const [currentArticleNumber, setCurrentArticleNumber] = useState(1);
+
   const currentArticle = useMemo(
     () => postData[currentArticleNumber - 1],
     [currentArticleNumber, postData]
