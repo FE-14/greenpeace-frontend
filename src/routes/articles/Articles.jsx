@@ -174,7 +174,7 @@ export default function Articles() {
             </ul>
           </div>
         )}
-        {isLoading && filteredPostData.length > 0 && (
+        {!isLoading && filteredPostData.length > 0 && (
           <ArticlesList
             selectedCategory={selectedCategory}
             postData={filteredPostData}
