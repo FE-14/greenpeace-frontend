@@ -79,6 +79,7 @@ export default function Articles() {
                 setHoveredCategory={setHoveredCategory}
                 isSelected={selectedCategory === category}
                 key={category}
+                isLoading={isLoading}
               />
             ))}
           </LayoutGroup>
