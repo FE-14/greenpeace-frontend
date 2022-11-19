@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { LayoutGroup } from "framer-motion";
 
 import { articleHero } from "../../assets";
@@ -17,11 +17,13 @@ import {
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Articles() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { search } = useLocation();
 
   const dispatch = useDispatch();
   const { postData, isLoading } = useSelector((store) => store.posts);
 
+  const [searchQuery, setSearchQuery] = useState("");
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const articlesCategory = ["Semua", "Krisis Iklim", "Hutan", "Polusi"];
@@ -32,7 +34,45 @@ export default function Articles() {
     return categoryParamsValue || "Semua";
   }, [searchParams.get("category")]);
 
+  const handleSearchQuerySubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+
+      if (searchQuery) {
+        setSearchParams(
+          { q: searchQuery, category: searchParams.get("category") },
+          { preventScrollReset: true }
+        );
+
+        return;
+      }
+
+      setSearchParams(
+        { category: searchParams.get("category") },
+        { preventScrollReset: true }
+      );
+    },
+    [search, searchQuery]
+  );
+
+  const handleSearchQeryChange = useCallback(
+    (event) => {
+      const { value } = event.target;
+
+      setSearchQuery(value);
+    },
+    [searchQuery]
+  );
+
   useEffect(() => {
+    const categoryParamsValue = searchParams.get("category");
+
+    if (!categoryParamsValue) {
+      setSearchParams({
+        category: "Semua",
+      });
+    }
+
     dispatch(getPostsData(URL));
   }, []);
 
@@ -65,7 +105,11 @@ export default function Articles() {
         </div>
       </figure>
       <section className="basic-padding my-12 flex flex-col items-center justify-center gap-10">
-        <SearchArticleBar />
+        <SearchArticleBar
+          onSearchQeryChange={handleSearchQeryChange}
+          onSearchQuerySubmit={handleSearchQuerySubmit}
+          searchQuery={searchQuery}
+        />
 
         <div
           className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:gap-10"
