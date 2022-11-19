@@ -85,7 +85,7 @@ export default function Articles() {
         </div>
       </section>
 
-      <section className="basic-padding my-32 flex flex-col items-center justify-center gap-10">
+      <section className="basic-padding my-12 flex flex-col items-center justify-center gap-10 lg:my-32">
         {isLoading && <SkeletonArticles />}
         {!isLoading && (
           <ArticlesList
