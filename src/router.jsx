@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import { Article, Articles, Error, Homepage } from "./routes";
+import { Articles, DetailArticle, Error, Homepage } from "./routes";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "articles/:articleId",
-        element: <Article />,
+        element: <DetailArticle />,
       },
     ],
   },
