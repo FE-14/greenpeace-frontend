@@ -1,4 +1,4 @@
 import formatPublishedDate from "./formatPublishedDate";
-import getPostData from "./getPostData";
+import getDetailPostData from "./getDetailPostData";
 
-export { formatPublishedDate, getPostData };
+export { formatPublishedDate, getDetailPostData };

@@ -15,8 +15,6 @@ import {
   SkeletonArticles,
 } from "./components";
 
-import "react-loading-skeleton/dist/skeleton.css";
-
 export default function Articles() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { search } = useLocation();

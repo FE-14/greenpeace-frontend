@@ -6,6 +6,7 @@ import { RouterProvider } from "react-router-dom";
 import store from "./app/store";
 import router from "./router";
 
+import "react-loading-skeleton/dist/skeleton.css";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

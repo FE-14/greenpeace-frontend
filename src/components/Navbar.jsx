@@ -15,7 +15,7 @@ import { greenpeaceLogoWhite } from "../assets";
 
 export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
-    window.innerWidth < 768
+    window.innerWidth < 1024
   );
 
   const [navbarIsOpen, setNavbarIsOpen] = useState(!isUnderLargeSizeWidth);
@@ -25,24 +25,40 @@ export default function Navbar({ forErrorElement }) {
       opacity: 0,
       scale: 0,
       y: isUnderLargeSizeWidth ? -1000 : 0,
+      transition: {
+        when: "afterChildren",
+      },
     },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
       transition: {
-        type: "tween",
+        duration: 0.25,
+        when: "beforeChildren",
+        staggerChildren: 0.15,
       },
     },
     exit: {
       opacity: 0,
       scale: 0,
       y: -1000,
+      transition: {
+        duration: 0.3,
+      },
     },
   };
 
+  const liVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
   const handleResize = () => {
-    setIsUnderLargeSizeWidth(window.innerWidth < 768);
+    setIsUnderLargeSizeWidth(window.innerWidth < 1024);
     setNavbarIsOpen(!isUnderLargeSizeWidth);
   };
 
@@ -78,27 +94,44 @@ export default function Navbar({ forErrorElement }) {
           id="toggle-navbar"
           onClick={() => setNavbarIsOpen((prevCondition) => !prevCondition)}
         >
-          <HiOutlineMenuAlt3 className="h-auto w-6 text-white md:hidden lg:w-8" />
+          <HiOutlineMenuAlt3 className="h-auto w-6 text-white lg:hidden lg:w-8" />
         </button>
         <AnimatePresence>
           {navbarIsOpen && (
             <motion.ul
-              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm md:static md:h-auto md:w-1/2 md:flex-row md:justify-end md:gap-0 md:bg-transparent md:backdrop-blur-none"
+              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm lg:static lg:h-auto lg:w-1/2 lg:flex-row lg:justify-end lg:gap-8 lg:bg-transparent lg:backdrop-blur-none"
               variants={ulVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
+              transition={{
+                type: "tween",
+              }}
             >
-              <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
-                <Link to="/articles" className="text-current">
-                  Artikel
-                  <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
-                </Link>
-              </li>
-              <li>
+              <NavbarLink
+                to="/"
+                isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                setNavbarIsOpen={setNavbarIsOpen}
+                variants={liVariants}
+              >
+                Beranda
+              </NavbarLink>
+              <NavbarLink
+                to="/articles"
+                isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                setNavbarIsOpen={setNavbarIsOpen}
+                variants={liVariants}
+              >
+                Artikel
+              </NavbarLink>
+
+              <motion.li
+                className="mt-12 md:ml-12 lg:mt-0"
+                variants={liVariants}
+              >
                 <SearchBar />
-              </li>
-              <li className="relative top-20 md:hidden">
+              </motion.li>
+              <li className="relative top-20 lg:hidden">
                 <button type="button">
                   <HiOutlineX
                     className="h-12 w-12 text-white"
@@ -115,12 +148,36 @@ export default function Navbar({ forErrorElement }) {
   );
 }
 
+function NavbarLink({
+  to,
+  isUnderLargeSizeWidth,
+  setNavbarIsOpen,
+  variants,
+  children,
+}) {
+  return (
+    <motion.li
+      className="group text-2xl font-bold text-white hover:text-white/80 lg:mx-2 lg:text-lg"
+      variants={variants}
+    >
+      <Link
+        to={to}
+        className="text-current"
+        onClick={() => isUnderLargeSizeWidth && setNavbarIsOpen(false)}
+      >
+        {children}
+        <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
+      </Link>
+    </motion.li>
+  );
+}
+
 function SearchBar() {
   const disabled = true;
 
   return (
     <form
-      className={classNames("md:ml-20", {
+      className={classNames({
         "opacity-40": disabled,
         "opacity-100": !disabled,
       })}
