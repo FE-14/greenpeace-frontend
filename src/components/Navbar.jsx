@@ -6,7 +6,7 @@ import {
   HiOutlineX,
 } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -131,7 +131,10 @@ export default function Navbar({ forErrorElement }) {
                 className="mt-12 md:ml-12 lg:mt-0"
                 variants={liVariants}
               >
-                <SearchBar />
+                <SearchBar
+                  isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                  setNavbarIsOpen={setNavbarIsOpen}
+                />
               </motion.li>
               <li className="relative top-20 lg:hidden">
                 <button type="button">
@@ -174,11 +177,16 @@ function NavbarLink({
   );
 }
 
-function SearchBar() {
+function SearchBar({ isUnderLargeSizeWidth, setNavbarIsOpen }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { searchValue } = useSelector((store) => store.search);
-  const [value, setValue] = useState(searchValue || "");
+
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const [value, setValue] = useState(
+    searchValue || searchParams.get("q") || ""
+  );
 
   const handleChangeSearchValue = (event) => {
     setValue(event.target.value);
@@ -186,8 +194,17 @@ function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (value.length === 0) {
+      return;
+    }
+
     dispatch(updateSearchValue(searchValue));
     navigate(`/search?q=${value}`);
+
+    if (isUnderLargeSizeWidth) {
+      setNavbarIsOpen(false);
+    }
   };
 
   return (
