@@ -6,10 +6,10 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import { LayoutGroup } from "framer-motion";
 
 import { articleHero } from "../../assets";
+import { SkeletonArticles } from "../../components";
 import { getPostsData } from "../../features/posts/postsSlice";
 
 import { ArticlesList, ButtonCategory, SearchArticleBar } from "./components";
-import { SkeletonArticles } from "../../components";
 
 export default function Articles() {
   const [searchParams, setSearchParams] = useSearchParams();
