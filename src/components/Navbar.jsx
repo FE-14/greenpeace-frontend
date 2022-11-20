@@ -207,6 +207,10 @@ function SearchBar({ isUnderLargeSizeWidth, setNavbarIsOpen }) {
     }
   };
 
+  useEffect(() => {
+    setValue(searchParams.get("q"));
+  }, [searchParams.get("q")]);
+
   return (
     <form className="opacity-100" onSubmit={handleSubmit}>
       <label htmlFor="search-bar" className="flex items-center gap-2">
