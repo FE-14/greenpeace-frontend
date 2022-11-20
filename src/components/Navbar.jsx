@@ -25,22 +25,38 @@ export default function Navbar({ forErrorElement }) {
       opacity: 0,
       scale: 0,
       y: isUnderLargeSizeWidth ? -1000 : 0,
+      transition: {
+        when: "afterChildren",
+      },
     },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
       transition: {
-        type: "tween",
+        duration: 0.25,
+        when: "beforeChildren",
+        staggerChildren: 0.15,
       },
     },
     exit: {
       opacity: 0,
       scale: 0,
       y: -1000,
+      transition: {
+        duration: 0.3,
+      },
     },
   };
 
+  const liVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
   const handleResize = () => {
     setIsUnderLargeSizeWidth(window.innerWidth < 768);
     setNavbarIsOpen(!isUnderLargeSizeWidth);
@@ -83,16 +99,20 @@ export default function Navbar({ forErrorElement }) {
         <AnimatePresence>
           {navbarIsOpen && (
             <motion.ul
-              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm md:static md:h-auto md:w-1/2 md:flex-row md:justify-end md:gap-0 md:bg-transparent md:backdrop-blur-none"
+              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm md:static md:h-auto md:w-1/2 md:flex-row md:justify-end md:gap-8 md:bg-transparent md:backdrop-blur-none"
               variants={ulVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
+              transition={{
+                type: "tween",
+              }}
             >
               <NavbarLink
                 to="/"
                 isUnderLargeSizeWidth={isUnderLargeSizeWidth}
                 setNavbarIsOpen={setNavbarIsOpen}
+                variants={liVariants}
               >
                 Beranda
               </NavbarLink>
@@ -100,13 +120,14 @@ export default function Navbar({ forErrorElement }) {
                 to="/articles"
                 isUnderLargeSizeWidth={isUnderLargeSizeWidth}
                 setNavbarIsOpen={setNavbarIsOpen}
+                variants={liVariants}
               >
                 Artikel
               </NavbarLink>
 
-              <li className="mt-12">
+              <motion.li className="mt-12 md:mt-0" variants={liVariants}>
                 <SearchBar />
-              </li>
+              </motion.li>
               <li className="relative top-20 md:hidden">
                 <button type="button">
                   <HiOutlineX
@@ -124,9 +145,18 @@ export default function Navbar({ forErrorElement }) {
   );
 }
 
-function NavbarLink({ to, children, isUnderLargeSizeWidth, setNavbarIsOpen }) {
+function NavbarLink({
+  to,
+  isUnderLargeSizeWidth,
+  setNavbarIsOpen,
+  variants,
+  children,
+}) {
   return (
-    <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
+    <motion.li
+      className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg"
+      variants={variants}
+    >
       <Link
         to={to}
         className="text-current"
@@ -135,7 +165,7 @@ function NavbarLink({ to, children, isUnderLargeSizeWidth, setNavbarIsOpen }) {
         {children}
         <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
       </Link>
-    </li>
+    </motion.li>
   );
 }
 
