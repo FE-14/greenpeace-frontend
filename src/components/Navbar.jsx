@@ -89,18 +89,21 @@ export default function Navbar({ forErrorElement }) {
               animate="visible"
               exit="exit"
             >
-              <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
-                <Link to="/" className="text-current">
-                  Beranda
-                  <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
-                </Link>
-              </li>
-              <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
-                <Link to="/articles" className="text-current">
-                  Artikel
-                  <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
-                </Link>
-              </li>
+              <NavbarLink
+                to="/"
+                isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                setNavbarIsOpen={setNavbarIsOpen}
+              >
+                Beranda
+              </NavbarLink>
+              <NavbarLink
+                to="/articles"
+                isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                setNavbarIsOpen={setNavbarIsOpen}
+              >
+                Artikel
+              </NavbarLink>
+
               <li className="mt-12">
                 <SearchBar />
               </li>
@@ -118,6 +121,21 @@ export default function Navbar({ forErrorElement }) {
         </AnimatePresence>
       </nav>
     </header>
+  );
+}
+
+function NavbarLink({ to, children, isUnderLargeSizeWidth, setNavbarIsOpen }) {
+  return (
+    <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
+      <Link
+        to={to}
+        className="text-current"
+        onClick={() => isUnderLargeSizeWidth && setNavbarIsOpen(false)}
+      >
+        {children}
+        <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
+      </Link>
+    </li>
   );
 }
 
