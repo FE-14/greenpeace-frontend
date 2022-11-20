@@ -14,11 +14,11 @@ Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkunga
 
 ### Development / Staging
 
-[https://greenpeace-staging.netlify.app/](https://greenpeace-staging.netlify.app/)
+[https://beta-greenpeace.netlify.app/](https://beta-greenpeace.netlify.app/)
 
 ### Local
 
--
+[http://localhost:5173/](http://localhost:5173/)
 
 ### Design
 
@@ -31,15 +31,14 @@ Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkunga
 - Display posts
 - Read posts
 - Articles page
-- Valounteer form section
 
 ## Team Members
 
-| Name                   | Role                   | GitHub URL                                           |
-| ---------------------- | ---------------------- | ---------------------------------------------------- |
-| Ersan Karimi           | Lead, Frontend, Design | [@ersankarimi](https://github.com/ersankarimi)       |
-| Intan Permatasari      | Frontend, Design       | [@intanpermata11](https://github.com/intanpermata11) |
-| Meilyana Anisa Mawarti | Frontend Design        | [@meilyanaanisa](https://github.com/meilyanaanisa)   |
+| Name                   | Role                     | GitHub URL                                           |
+| ---------------------- | ------------------------ | ---------------------------------------------------- |
+| Ersan Karimi           | Leader, Frontend, Design | [@ersankarimi](https://github.com/ersankarimi)       |
+| Intan Permatasari      | Frontend, Design         | [@intanpermata11](https://github.com/intanpermata11) |
+| Meilyana Anisa Mawarti | Frontend Design          | [@meilyanaanisa](https://github.com/meilyanaanisa)   |
 
 ## Tech Stack
 
@@ -47,11 +46,29 @@ Greenpeace adalah sebuah organisasi non-profit yang bergerak di bidang lingkunga
 - CSS
   - Tailwind CSS
 - JavaScript
-- Node.js & npm
+- React
+  - Vite (Bundler)
+  - React Router
+  - Redux
+    - Redux Toolkit
 - Data Fetching
-  - REST API: `fetch`
+  - Axios
 - Misc
+  - Framer Motion
+  - Vitest
+  - React Icons
+  - Testing Library
+    - @testing-library/jest-dom
+  - Classnames
   - Prettier
+  - ESLint
+    - eslint-config-airbnb
+    - eslint-plugin-import
+    - eslint-plugin-jsx-a11y
+    - eslint-plugin-react
+    - eslint-plugin-react-hooks
+    - eslint-config-prettier
+    - eslint-plugin-simple-import-sort
 
 ## Development
 
@@ -79,11 +96,17 @@ Format code:
 npm run format
 ```
 
+Test:
+
+```sh
+npm run test
+```
+
 ## Data Model
 
-## REST API Endpoints
+### REST API Endpoints
 
-### Production REST API URL:
+#### Production REST API URL:
 
 - `https://<KEY>.mockapi.io/greenpeace/api/v1`
 
