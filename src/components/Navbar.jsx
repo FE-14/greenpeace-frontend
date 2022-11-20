@@ -90,12 +90,18 @@ export default function Navbar({ forErrorElement }) {
               exit="exit"
             >
               <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
+                <Link to="/" className="text-current">
+                  Beranda
+                  <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
+                </Link>
+              </li>
+              <li className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg">
                 <Link to="/articles" className="text-current">
                   Artikel
                   <hr className="h-[1px] w-1/2 border-0 bg-current duration-200 group-hover:w-full" />
                 </Link>
               </li>
-              <li>
+              <li className="mt-12">
                 <SearchBar />
               </li>
               <li className="relative top-20 md:hidden">
