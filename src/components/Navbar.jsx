@@ -5,13 +5,15 @@ import {
   HiOutlineSearch,
   HiOutlineX,
 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
 
 import { greenpeaceLogoWhite } from "../assets";
+import { updateSearchValue } from "../features/search/searchSlice";
 
 export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
@@ -129,7 +131,10 @@ export default function Navbar({ forErrorElement }) {
                 className="mt-12 md:ml-12 lg:mt-0"
                 variants={liVariants}
               >
-                <SearchBar />
+                <SearchBar
+                  isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                  setNavbarIsOpen={setNavbarIsOpen}
+                />
               </motion.li>
               <li className="relative top-20 lg:hidden">
                 <button type="button">
@@ -172,35 +177,48 @@ function NavbarLink({
   );
 }
 
-function SearchBar() {
-  const disabled = true;
+function SearchBar({ isUnderLargeSizeWidth, setNavbarIsOpen }) {
+  const dispatch = useDispatch();
+  const { searchValue } = useSelector((store) => store.search);
+
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const [value, setValue] = useState(
+    searchValue || searchParams.get("q") || ""
+  );
+
+  const handleChangeSearchValue = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (value.length === 0) {
+      return;
+    }
+
+    dispatch(updateSearchValue(searchValue));
+    navigate(`/search?q=${value}`);
+
+    if (isUnderLargeSizeWidth) {
+      setNavbarIsOpen(false);
+    }
+  };
 
   return (
-    <form
-      className={classNames({
-        "opacity-40": disabled,
-        "opacity-100": !disabled,
-      })}
-    >
-      <label
-        htmlFor="search-bar"
-        className={classNames("flex items-center gap-2", {
-          "cursor-not-allowed": disabled,
-        })}
-      >
+    <form className="opacity-100" onSubmit={handleSubmit}>
+      <label htmlFor="search-bar" className="flex items-center gap-2">
         <HiOutlineSearch className="h-6 w-6 text-white" />
         <HiOutlineMinus className="h-6 w-6 rotate-90 text-white" />
         <input
           type="search"
           id="search-bar"
-          className={classNames(
-            "form-input border-white bg-transparent text-white placeholder:text-sm placeholder:text-white/60 focus:border-current focus:ring-white/60 md:border-none md:placeholder:text-base md:focus:ring-0",
-            {
-              "cursor-not-allowed": disabled,
-            }
-          )}
+          className="form-input border-white bg-transparent text-white placeholder:text-sm placeholder:text-white/60 focus:border-current focus:ring-white/60 md:border-none md:placeholder:text-base md:focus:ring-0"
           placeholder="Telusuri ..."
-          disabled={disabled}
+          value={value}
+          onChange={handleChangeSearchValue}
         />
       </label>
     </form>
