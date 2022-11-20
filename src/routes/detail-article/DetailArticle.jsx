@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
 import { getDetailPostData } from "../../libs";
@@ -12,11 +13,54 @@ export default function DetailArticle() {
   const { postData, isLoading } = getDetailPostData(`${URL}/${articleId}`);
 
   return (
-    <section className="basic-padding mx-auto mt-20 py-8 md:w-10/12 lg:w-2/3">
-      {isLoading && <DetailArticleSkeleton />}
-      {!isLoading && Object.entries(postData).length && (
-        <Article {...postData} />
-      )}
-    </section>
+    <>
+      <Helmet>
+        <title>{postData?.title || "Article"} | Greenpeace IOndonesia</title>
+
+        <meta
+          name="title"
+          content={postData?.title || "Artikel Greenpeace Indonesia"}
+        />
+        <meta name="description" content={postData?.postDescription} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta
+          property="og:title"
+          content={postData?.title || "Artikel Greenpeace Indonesia"}
+        />
+
+        <meta property="og:description" content={postData?.postDescription} />
+        <meta
+          property="og:image"
+          content={
+            postData?.imageUrl ||
+            "/src/assets/images/greenpeace-indonesia-home.png"
+          }
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Greenpeace Indonesia" />
+        <meta
+          property="twitter:description"
+          content={postData?.postDescription}
+        />
+        <meta
+          property="twitter:image"
+          content={
+            postData?.imageUrl ||
+            "/src/assets/images/greenpeace-indonesia-home.png"
+          }
+        />
+      </Helmet>
+
+      <section className="basic-padding mx-auto mt-20 py-8 md:w-10/12 lg:w-2/3">
+        {isLoading && <DetailArticleSkeleton />}
+        {!isLoading && Object.entries(postData).length && (
+          <Article {...postData} />
+        )}
+      </section>
+    </>
   );
 }
