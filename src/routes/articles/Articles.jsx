@@ -8,12 +8,8 @@ import { LayoutGroup } from "framer-motion";
 import { articleHero } from "../../assets";
 import { getPostsData } from "../../features/posts/postsSlice";
 
-import {
-  ArticlesList,
-  ButtonCategory,
-  SearchArticleBar,
-  SkeletonArticles,
-} from "./components";
+import { ArticlesList, ButtonCategory, SearchArticleBar } from "./components";
+import { SkeletonArticles } from "../../components";
 
 export default function Articles() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -173,10 +169,7 @@ export default function Articles() {
           </div>
         )}
         {!isLoading && filteredPostData.length > 0 && (
-          <ArticlesList
-            selectedCategory={selectedCategory}
-            postData={filteredPostData}
-          />
+          <ArticlesList postData={filteredPostData} />
         )}
       </section>
     </>
