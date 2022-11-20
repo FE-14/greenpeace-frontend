@@ -15,7 +15,7 @@ import { greenpeaceLogoWhite } from "../assets";
 
 export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
-    window.innerWidth < 768
+    window.innerWidth < 1024
   );
 
   const [navbarIsOpen, setNavbarIsOpen] = useState(!isUnderLargeSizeWidth);
@@ -58,7 +58,7 @@ export default function Navbar({ forErrorElement }) {
     },
   };
   const handleResize = () => {
-    setIsUnderLargeSizeWidth(window.innerWidth < 768);
+    setIsUnderLargeSizeWidth(window.innerWidth < 1024);
     setNavbarIsOpen(!isUnderLargeSizeWidth);
   };
 
@@ -94,12 +94,12 @@ export default function Navbar({ forErrorElement }) {
           id="toggle-navbar"
           onClick={() => setNavbarIsOpen((prevCondition) => !prevCondition)}
         >
-          <HiOutlineMenuAlt3 className="h-auto w-6 text-white md:hidden lg:w-8" />
+          <HiOutlineMenuAlt3 className="h-auto w-6 text-white lg:hidden lg:w-8" />
         </button>
         <AnimatePresence>
           {navbarIsOpen && (
             <motion.ul
-              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm md:static md:h-auto md:w-1/2 md:flex-row md:justify-end md:gap-8 md:bg-transparent md:backdrop-blur-none"
+              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm lg:static lg:h-auto lg:w-1/2 lg:flex-row lg:justify-end lg:gap-8 lg:bg-transparent lg:backdrop-blur-none"
               variants={ulVariants}
               initial="hidden"
               animate="visible"
@@ -125,10 +125,13 @@ export default function Navbar({ forErrorElement }) {
                 Artikel
               </NavbarLink>
 
-              <motion.li className="mt-12 md:mt-0" variants={liVariants}>
+              <motion.li
+                className="mt-12 md:ml-12 lg:mt-0"
+                variants={liVariants}
+              >
                 <SearchBar />
               </motion.li>
-              <li className="relative top-20 md:hidden">
+              <li className="relative top-20 lg:hidden">
                 <button type="button">
                   <HiOutlineX
                     className="h-12 w-12 text-white"
@@ -154,7 +157,7 @@ function NavbarLink({
 }) {
   return (
     <motion.li
-      className="group text-2xl font-bold text-white hover:text-white/80 md:mx-2 md:text-lg"
+      className="group text-2xl font-bold text-white hover:text-white/80 lg:mx-2 lg:text-lg"
       variants={variants}
     >
       <Link
@@ -174,7 +177,7 @@ function SearchBar() {
 
   return (
     <form
-      className={classNames("md:ml-20", {
+      className={classNames({
         "opacity-40": disabled,
         "opacity-100": !disabled,
       })}
