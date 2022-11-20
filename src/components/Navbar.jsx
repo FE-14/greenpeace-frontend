@@ -5,13 +5,15 @@ import {
   HiOutlineSearch,
   HiOutlineX,
 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
 
 import { greenpeaceLogoWhite } from "../assets";
+import { updateSearchValue } from "../features/search/searchSlice";
 
 export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
@@ -173,8 +175,23 @@ function NavbarLink({
 }
 
 function SearchBar() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { searchValue } = useSelector((store) => store.search);
+  const [value, setValue] = useState(searchValue || "");
+
+  const handleChangeSearchValue = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(updateSearchValue(searchValue));
+    navigate(`/search?q=${value}`);
+  };
+
   return (
-    <form className="opacity-100">
+    <form className="opacity-100" onSubmit={handleSubmit}>
       <label htmlFor="search-bar" className="flex items-center gap-2">
         <HiOutlineSearch className="h-6 w-6 text-white" />
         <HiOutlineMinus className="h-6 w-6 rotate-90 text-white" />
@@ -183,6 +200,8 @@ function SearchBar() {
           id="search-bar"
           className="form-input border-white bg-transparent text-white placeholder:text-sm placeholder:text-white/60 focus:border-current focus:ring-white/60 md:border-none md:placeholder:text-base md:focus:ring-0"
           placeholder="Telusuri ..."
+          value={value}
+          onChange={handleChangeSearchValue}
         />
       </label>
     </form>
