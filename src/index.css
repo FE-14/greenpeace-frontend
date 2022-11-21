@@ -43,4 +43,7 @@
   .basic-padding {
     @apply px-4 md:px-8 lg:px-12 xl:px-8 2xl:px-[112px];
   }
+  .basic-padding-navbar {
+    @apply px-4 md:px-4 lg:px-8 xl:px-8 2xl:px-[112px];
+  }
 }

@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 import { greenpeaceLogoWhite } from "../../assets";
 
-import { NavbarLink, SearchBar } from "./components";
+import { NavbarDropdown, NavbarLink, SearchBar } from "./components";
 
 export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
@@ -70,7 +70,7 @@ export default function Navbar({ forErrorElement }) {
   return (
     <header
       className={classNames(
-        "basic-padding z-50 w-full bg-green-gp-800/[35%] py-4 font-montserrat backdrop-blur-sm",
+        "basic-padding-navbar z-50 w-full bg-green-gp-800/[35%] py-4 font-montserrat backdrop-blur-sm",
         {
           fixed: !forErrorElement,
           relative: forErrorElement,
@@ -97,7 +97,7 @@ export default function Navbar({ forErrorElement }) {
         <AnimatePresence>
           {navbarIsOpen && (
             <motion.ul
-              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/80 backdrop-blur-sm lg:static lg:h-auto lg:w-1/2 lg:flex-row lg:justify-end lg:gap-8 lg:bg-transparent lg:backdrop-blur-none"
+              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/90 backdrop-blur-sm lg:static lg:h-auto lg:w-1/2 lg:flex-row lg:justify-end lg:gap-4 lg:bg-transparent lg:backdrop-blur-none"
               variants={ulVariants}
               initial="hidden"
               animate="visible"
@@ -106,14 +106,30 @@ export default function Navbar({ forErrorElement }) {
                 type: "tween",
               }}
             >
-              <NavbarLink
-                to="/"
-                isUnderLargeSizeWidth={isUnderLargeSizeWidth}
-                setNavbarIsOpen={setNavbarIsOpen}
+              <motion.li
+                className="mt-12 md:ml-12 lg:mt-0"
                 variants={liVariants}
               >
-                Beranda
-              </NavbarLink>
+                <NavbarDropdown
+                  items={[
+                    {
+                      children: "Tentang Kami",
+                      to: "/tentang",
+                    },
+                    {
+                      children: "Sejarah Greenpeace",
+                      to: "/sejarah",
+                    },
+                    {
+                      children: "Kemenangan Greenpeace",
+                      to: "/kemenangan",
+                    },
+                  ]}
+                >
+                  Kenali Greenpeace
+                </NavbarDropdown>
+              </motion.li>
+
               <NavbarLink
                 to="/articles"
                 isUnderLargeSizeWidth={isUnderLargeSizeWidth}

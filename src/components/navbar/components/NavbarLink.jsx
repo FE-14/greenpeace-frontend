@@ -15,7 +15,7 @@ export default function NavbarLink({
     >
       <Link
         to={to}
-        className="text-current"
+        className="py-1 px-2 text-current"
         onClick={() => isUnderLargeSizeWidth && setNavbarIsOpen(false)}
       >
         {children}
