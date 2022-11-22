@@ -74,6 +74,9 @@ export default function Homepage() {
           </h1>
         </div>
       </figure>
+
+      <section></section>
+
       <div className="flex flex-col">
         <HomepageSection
           headerText="Artikel Terbaru"
