@@ -6,7 +6,12 @@ import {
   HiOutlineX,
 } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -183,6 +188,7 @@ function SearchBar({ isUnderLargeSizeWidth, setNavbarIsOpen }) {
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [value, setValue] = useState(
     searchValue || searchParams.get("q") || ""
@@ -208,7 +214,9 @@ function SearchBar({ isUnderLargeSizeWidth, setNavbarIsOpen }) {
   };
 
   useEffect(() => {
-    setValue(searchParams.get("q"));
+    if (location.pathname === "/search") {
+      setValue(searchParams.get("q") || "");
+    }
   }, [searchParams.get("q")]);
 
   return (
