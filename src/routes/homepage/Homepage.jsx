@@ -11,6 +11,8 @@ import {
   greenLineIllustration,
   greenOutlineHalfArtboard,
   homepageHero,
+  imageIntro,
+  imageIntroCover,
 } from "../../assets";
 import { getPostsData } from "../../features/posts/postsSlice";
 
