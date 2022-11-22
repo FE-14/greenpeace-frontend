@@ -78,6 +78,26 @@ export default function Homepage() {
       <section></section>
 
       <div className="flex flex-col">
+        <section className="basic-padding my-12 flex items-center">
+          <div className="">
+            <h1>Tentang Kami</h1>
+            <h2>
+              Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh
+              solusi. Butuh perubahan. Butuh aksi.
+            </h2>
+            <p>
+              Di seluruh dunia, kita berdiri bersama-sama dengan masyarakat,
+              menuntut pertanggung jawaban berbagai pemerintahan dan perusahaan
+              untuk bertanggung jawab. Mulai dari jalanan hingga ke tempat para
+              pengambil keputusan, kita mempunyai kekuatan nyata jika kita
+              bekerja sama.
+            </p>
+            <button type="button">Tentang Kami</button>
+          </div>
+          <div className="">
+            <img src={homepageHero} alt="" />
+          </div>
+        </section>
         <HomepageSection
           headerText="Artikel Terbaru"
           descriptionText="Baca tentang beberapa kemenangan, tragedi, dan momen penting lainnya dari Greenpeace 50 tahun terakhir."
