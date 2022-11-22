@@ -4,8 +4,11 @@ import { useSelector } from "react-redux";
 
 import {
   greenBigOutlineHalfOutboard,
+  greenLineIllustration,
   greenOutlineHalfArtboard,
   homepageHero,
+  imageIntro,
+  imageIntroCover,
 } from "../../assets";
 
 import {
@@ -74,28 +77,27 @@ export default function Homepage() {
           </h1>
         </div>
       </figure>
-
-      <section></section>
-
       <div className="flex flex-col">
-        <section className="basic-padding my-12 flex items-center">
-          <div className="">
-            <h1>Tentang Kami</h1>
-            <h2>
+        <section className=" gap-8 relative basic-padding my-12 flex items-center">
+          <div className="w-1/2">
+            <img src={greenLineIllustration} alt="" />
+            <h1 className="font-montserrat text-green-600 md:text-4xl lg:text-5xl font-bold mb-3 mt-8">Tentang Kami</h1>
+            <h2 className="font-montserrat text-black text-lg mb-3">
               Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh
               solusi. Butuh perubahan. Butuh aksi.
             </h2>
-            <p>
+            <p className="font-source-sans-pro text-black text-base mb-4 ">
               Di seluruh dunia, kita berdiri bersama-sama dengan masyarakat,
               menuntut pertanggung jawaban berbagai pemerintahan dan perusahaan
               untuk bertanggung jawab. Mulai dari jalanan hingga ke tempat para
               pengambil keputusan, kita mempunyai kekuatan nyata jika kita
               bekerja sama.
             </p>
-            <button type="button">Tentang Kami</button>
+            <button className="inline-block px-6 py-2.5 bg-orange-500 text-white font-source-sans-pro font-bold text-xs leading-tight  rounded shadow-md hover:bg-orange-600 hover:shadow-lg transition duration-150 ease-in-out" type="button">Tentang Kami</button>
           </div>
-          <div className="">
-            <img src={homepageHero} alt="" />
+          <div className="flex items-center relative">
+            <img className="drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.25)) " src={imageIntroCover} alt=""/>
+            <img className="absolute" src={imageIntro} alt="" />
           </div>
         </section>
         <HomepageSection
