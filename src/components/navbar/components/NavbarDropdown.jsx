@@ -4,21 +4,24 @@ import { motion } from "framer-motion";
 
 import DropdownItem from "./DropdownItem";
 
-export default function NavbarDropdown({ items, children }) {
+export default function NavbarDropdown({
+  items,
+  isUnderLargeSizeWidth,
+  setNavbarIsOpen,
+  children,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.div
+    <motion.button
       initial={false}
       animate={isOpen ? "open" : "closed"}
-      className="relative"
+      className="group relative flex flex-col gap-2 whitespace-nowrap py-1 px-2 text-current focus:outline focus:outline-1 focus:outline-green-gp-400/20 lg:mx-2 lg:text-lg"
+      type="button"
+      onClick={() => setIsOpen(!isOpen)}
+      whileTap={{ scale: 0.97 }}
     >
-      <motion.button
-        type="button"
-        whileTap={{ scale: 0.97 }}
-        onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center gap-2 whitespace-nowrap py-1 px-2 text-2xl font-bold text-white hover:text-white/80 lg:mx-2 lg:text-lg"
-      >
+      <div className="flex items-center">
         {children}
         <motion.div
           variants={{
@@ -30,9 +33,10 @@ export default function NavbarDropdown({ items, children }) {
         >
           <HiOutlineChevronDown className="h-6 w-6" />
         </motion.div>
-      </motion.button>
+      </div>
+
       <motion.ul
-        className="flex w-full flex-col gap-3 p-4 lg:absolute lg:mt-5 lg:bg-green-gp-800/[55%]"
+        className="left-0 right-0 top-[80%] flex w-full flex-col gap-3 border-white/20 p-4 lg:absolute lg:mt-5 lg:w-max lg:border-[1px] lg:bg-green-gp-800/[60%]"
         variants={{
           open: {
             display: "flex",
@@ -56,9 +60,14 @@ export default function NavbarDropdown({ items, children }) {
         layout
       >
         {items.map((item) => (
-          <DropdownItem {...item} key={item.children} />
+          <DropdownItem
+            {...item}
+            setNavbarIsOpen={setNavbarIsOpen}
+            isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+            key={item.children}
+          />
         ))}
       </motion.ul>
-    </motion.div>
+    </motion.button>
   );
 }

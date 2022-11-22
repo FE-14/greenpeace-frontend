@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export default function DropdownItem({ to, children }) {
+export default function DropdownItem({
+  to,
+  isUnderLargeSizeWidth,
+  setNavbarIsOpen,
+  children,
+}) {
   const itemVariants = {
     open: {
       opacity: 1,
-      y: 0,
       transition: { type: "spring", stiffness: 300, damping: 24 },
     },
     closed: {
@@ -18,11 +22,11 @@ export default function DropdownItem({ to, children }) {
       variants={itemVariants}
       key={children}
       className="w-max text-white"
-      layout
     >
       <Link
         to={to}
-        className="whitespace-nowrap font-medium text-white/[85%] hover:text-white"
+        className="whitespace-nowrap p-2 text-sm font-medium text-white/[70%] hover:text-white focus:outline focus:outline-1 focus:outline-green-gp-400/20"
+        onClick={() => isUnderLargeSizeWidth && setNavbarIsOpen(false)}
       >
         {children}
       </Link>

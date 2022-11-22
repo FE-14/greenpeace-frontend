@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 import { greenpeaceLogoWhite } from "../../assets";
 
-import { NavbarDropdown, NavbarLink, SearchBar } from "./components";
+import { NavbarDropdown, NavbarLi, NavbarLink, SearchBar } from "./components";
 
 export default function Navbar({ forErrorElement }) {
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
@@ -46,15 +46,6 @@ export default function Navbar({ forErrorElement }) {
     },
   };
 
-  const liVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
-
   const handleResize = () => {
     setIsUnderLargeSizeWidth(window.innerWidth < 1024);
     setNavbarIsOpen(!isUnderLargeSizeWidth);
@@ -70,7 +61,7 @@ export default function Navbar({ forErrorElement }) {
   return (
     <header
       className={classNames(
-        "basic-padding-navbar z-50 w-full bg-green-gp-800/[35%] py-4 font-montserrat backdrop-blur-sm",
+        "basic-padding-navbar z-50 w-full bg-green-gp-800/[60%] py-4 font-montserrat backdrop-blur-sm",
         {
           fixed: !forErrorElement,
           relative: forErrorElement,
@@ -79,7 +70,10 @@ export default function Navbar({ forErrorElement }) {
     >
       <nav className="flex items-center justify-between">
         <figure>
-          <Link to="/">
+          <Link
+            to="/"
+            className="focus:outline focus:outline-1 focus:outline-green-gp-400/20"
+          >
             <img
               src={greenpeaceLogoWhite}
               alt="Greenpeace Logo"
@@ -87,79 +81,68 @@ export default function Navbar({ forErrorElement }) {
             />
           </Link>
         </figure>
-        <button
-          type="button"
-          id="toggle-navbar"
-          onClick={() => setNavbarIsOpen((prevCondition) => !prevCondition)}
-        >
-          <HiOutlineMenuAlt3 className="h-auto w-6 text-white lg:hidden lg:w-8" />
-        </button>
-        <AnimatePresence>
-          {navbarIsOpen && (
-            <motion.ul
-              className="absolute top-0 right-0 left-0 flex h-screen flex-col items-center justify-center gap-12 bg-green-gp-800/90 backdrop-blur-sm lg:static lg:h-auto lg:w-1/2 lg:flex-row lg:justify-end lg:gap-4 lg:bg-transparent lg:backdrop-blur-none"
-              variants={ulVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              transition={{
-                type: "tween",
-              }}
-            >
-              <motion.li
-                className="mt-12 md:ml-12 lg:mt-0"
-                variants={liVariants}
-              >
-                <NavbarDropdown
-                  items={[
-                    {
-                      children: "Tentang Kami",
-                      to: "/tentang",
-                    },
-                    {
-                      children: "Sejarah Greenpeace",
-                      to: "/sejarah",
-                    },
-                    {
-                      children: "Kemenangan Greenpeace",
-                      to: "/kemenangan",
-                    },
-                  ]}
-                >
-                  Kenali Greenpeace
-                </NavbarDropdown>
-              </motion.li>
+        <div className="flex items-center justify-center gap-4 lg:gap-20">
+          <button
+            type="button"
+            id="toggle-navbar"
+            onClick={() => setNavbarIsOpen((prevCondition) => !prevCondition)}
+            className="order-3 focus:outline focus:outline-1 focus:outline-green-gp-400/20 lg:hidden"
+          >
+            {!navbarIsOpen && (
+              <HiOutlineMenuAlt3 className="h-auto w-6 text-white lg:w-8" />
+            )}
+            {navbarIsOpen && <HiOutlineX className="h-auto w-6 text-white" />}
+          </button>
 
-              <NavbarLink
-                to="/articles"
-                isUnderLargeSizeWidth={isUnderLargeSizeWidth}
-                setNavbarIsOpen={setNavbarIsOpen}
-                variants={liVariants}
+          <AnimatePresence>
+            {navbarIsOpen && (
+              <motion.ul
+                className="basic-padding absolute bottom-0 top-[100%] left-0 flex h-screen w-full flex-col gap-4 bg-green-gp-800 py-8 backdrop-blur-sm lg:static lg:h-auto lg:flex-row  lg:justify-end lg:gap-8 lg:bg-transparent lg:p-0  lg:py-0 lg:backdrop-blur-none"
+                variants={ulVariants}
+                initial={isUnderLargeSizeWidth ? "hidden" : "visible"}
+                animate="visible"
+                exit="exit"
+                transition={{
+                  type: "tween",
+                }}
               >
-                Artikel
-              </NavbarLink>
+                <NavbarLi>
+                  <NavbarDropdown
+                    items={[
+                      {
+                        children: "Tentang Kami",
+                        to: "/tentang",
+                      },
+                      {
+                        children: "Sejarah Greenpeace",
+                        to: "/sejarah",
+                      },
+                      {
+                        children: "Kemenangan Greenpeace",
+                        to: "/kemenangan",
+                      },
+                    ]}
+                    setNavbarIsOpen={setNavbarIsOpen}
+                    isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                  >
+                    Kenali Greenpeace
+                  </NavbarDropdown>
+                </NavbarLi>
 
-              <motion.li
-                className="mt-12 md:ml-12 lg:mt-0"
-                variants={liVariants}
-              >
-                <SearchBar
-                  isUnderLargeSizeWidth={isUnderLargeSizeWidth}
-                  setNavbarIsOpen={setNavbarIsOpen}
-                />
-              </motion.li>
-              <li className="relative top-20 lg:hidden">
-                <button type="button">
-                  <HiOutlineX
-                    className="h-12 w-12 text-white"
-                    id="close-navbar"
-                    onClick={() => setNavbarIsOpen(false)}
-                  />
-                </button>
-              </li>
-            </motion.ul>
-          )}
-        </AnimatePresence>
+                <NavbarLi>
+                  <NavbarLink
+                    to="/articles"
+                    isUnderLargeSizeWidth={isUnderLargeSizeWidth}
+                    setNavbarIsOpen={setNavbarIsOpen}
+                  >
+                    Artikel
+                  </NavbarLink>
+                </NavbarLi>
+              </motion.ul>
+            )}
+          </AnimatePresence>
+          <SearchBar isUnderLargeSizeWidth={isUnderLargeSizeWidth} />
+        </div>
       </nav>
     </header>
   );
