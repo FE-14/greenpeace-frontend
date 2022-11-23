@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -11,6 +11,7 @@ import { greenpeaceLogoWhite } from "../../assets";
 import { NavbarDropdown, NavbarLi, NavbarLink, SearchBar } from "./components";
 
 export default function Navbar({ forErrorElement }) {
+  const { pathname } = useLocation();
   const [isUnderLargeSizeWidth, setIsUnderLargeSizeWidth] = useState(
     window.innerWidth < 1024
   );
@@ -58,10 +59,16 @@ export default function Navbar({ forErrorElement }) {
     };
   }, [window.innerWidth]);
 
+  useEffect(() => {
+    if (isUnderLargeSizeWidth) {
+      setNavbarIsOpen(false);
+    }
+  }, [pathname]);
+
   return (
     <header
       className={classNames(
-        "basic-padding-navbar z-50 w-full bg-green-gp-800/[60%] py-4 font-montserrat backdrop-blur-sm",
+        "basic-padding-navbar z-50 w-full bg-green-gp-800/[75%] py-4 font-montserrat backdrop-blur-sm",
         {
           fixed: !forErrorElement,
           relative: forErrorElement,
@@ -97,7 +104,7 @@ export default function Navbar({ forErrorElement }) {
           <AnimatePresence>
             {navbarIsOpen && (
               <motion.ul
-                className="basic-padding absolute bottom-0 top-[100%] left-0 flex h-screen w-full flex-col gap-4 bg-green-gp-800 py-8 backdrop-blur-sm lg:static lg:h-auto lg:flex-row  lg:justify-end lg:gap-8 lg:bg-transparent lg:p-0  lg:py-0 lg:backdrop-blur-none"
+                className="basic-padding absolute bottom-0 top-[100%] left-0 z-50 flex h-screen w-full flex-col gap-4 bg-green-gp-800 py-8 backdrop-blur-sm lg:static lg:h-auto  lg:flex-row lg:justify-end lg:gap-8 lg:bg-transparent lg:p-0 lg:py-0 lg:backdrop-blur-none"
                 variants={ulVariants}
                 initial={isUnderLargeSizeWidth ? "hidden" : "visible"}
                 animate="visible"

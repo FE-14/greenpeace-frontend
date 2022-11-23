@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineChevronDown } from "react-icons/hi";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import DropdownItem from "./DropdownItem";
@@ -11,6 +12,11 @@ export default function NavbarDropdown({
   children,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <motion.button
@@ -36,10 +42,12 @@ export default function NavbarDropdown({
       </div>
 
       <motion.ul
-        className="left-0 right-0 top-[80%] flex w-full flex-col gap-3 border-white/20 p-4 lg:absolute lg:mt-5 lg:w-max lg:border-[1px] lg:bg-green-gp-800/[60%]"
+        className="left-0 right-0 top-[80%] hidden w-full flex-col gap-3 border-white/20 p-4 lg:absolute lg:mt-5 lg:flex lg:w-max lg:border-[1px] lg:bg-green-gp-800/[90%]"
         variants={{
           open: {
+            scale: 1,
             display: "flex",
+            opacity: 1,
             transition: {
               type: "spring",
               bounce: 0,
@@ -49,7 +57,8 @@ export default function NavbarDropdown({
             },
           },
           closed: {
-            display: "none",
+            scale: 0,
+            opacity: 0,
             transition: {
               type: "spring",
               bounce: 0,
@@ -57,7 +66,6 @@ export default function NavbarDropdown({
             },
           },
         }}
-        layout
       >
         {items.map((item) => (
           <DropdownItem
