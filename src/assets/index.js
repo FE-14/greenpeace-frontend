@@ -4,6 +4,7 @@ import greenFullArtboard from "./images/green-full-artboard.png";
 import greenLineIllustration from "./images/green-line-illustration.png";
 import greenOutlineHalfArtboard from "./images/green-outline-half-artboard.png";
 import greenpeaceLogoWhite from "./images/greenpeace-logo-white.png";
+import historyCover from "./images/history-cover.png";
 import homepageHero from "./images/homepage-hero.webp";
 import whiteLineIllustration from "./images/white-line-illustration.png";
 
@@ -14,6 +15,7 @@ export {
   greenLineIllustration,
   greenOutlineHalfArtboard,
   greenpeaceLogoWhite,
+  historyCover,
   homepageHero,
   whiteLineIllustration,
 };
