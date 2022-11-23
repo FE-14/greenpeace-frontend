@@ -11,8 +11,6 @@ import {
   greenLineIllustration,
   greenOutlineHalfArtboard,
   homepageHero,
-  imageIntro,
-  imageIntroCover,
 } from "../../assets";
 
 import {
