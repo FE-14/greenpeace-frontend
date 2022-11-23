@@ -13,7 +13,7 @@ export default function SearchBar({ isUnderLargeSizeWidth }) {
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   const [isOpen, setIsOpen] = useState(!isUnderLargeSizeWidth);
   const inputRef = useRef(null);
@@ -41,7 +41,7 @@ export default function SearchBar({ isUnderLargeSizeWidth }) {
   };
 
   useEffect(() => {
-    if (location.pathname === "/search") {
+    if (pathname === "/search") {
       setValue(searchParams.get("q") || "");
     }
   }, [searchParams.get("q")]);
@@ -53,6 +53,12 @@ export default function SearchBar({ isUnderLargeSizeWidth }) {
   useEffect(() => {
     inputRef.current.focus();
   }, [isOpen]);
+
+  useEffect(() => {
+    if (isUnderLargeSizeWidth) {
+      setIsOpen(false);
+    }
+  }, [pathname]);
 
   return (
     <form
