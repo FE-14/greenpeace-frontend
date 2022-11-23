@@ -36,7 +36,7 @@ export default function NavbarDropdown({
       </div>
 
       <motion.ul
-        className="left-0 right-0 top-[80%] flex w-full flex-col gap-3 border-white/20 p-4 lg:absolute lg:mt-5 lg:w-max lg:border-[1px] lg:bg-green-gp-800/[60%]"
+        className="left-0 right-0 top-[80%] flex w-full flex-col gap-3 border-white/20 p-4 lg:absolute lg:mt-5 lg:w-max lg:border-[1px] lg:bg-green-gp-800/[70%]"
         variants={{
           open: {
             display: "flex",
@@ -57,7 +57,6 @@ export default function NavbarDropdown({
             },
           },
         }}
-        layout
       >
         {items.map((item) => (
           <DropdownItem
