@@ -25,7 +25,7 @@ export default function DropdownItem({
     >
       <Link
         to={to}
-        className="whitespace-nowrap p-2 text-sm font-medium text-white/[70%] hover:text-white focus:outline focus:outline-1 focus:outline-green-gp-400/20"
+        className="whitespace-nowrap p-2 text-sm font-medium tracking-wide text-white/[70%] duration-200 hover:bg-green-gp-400/20 hover:text-white focus:outline focus:outline-1 focus:outline-green-gp-400/20"
         onClick={() => isUnderLargeSizeWidth && setNavbarIsOpen(false)}
       >
         {children}
