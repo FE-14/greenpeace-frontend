@@ -1,7 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import { Articles, DetailArticle, Error, Homepage, Search } from "./routes";
+import {
+  Articles,
+  DetailArticle,
+  Error,
+  History,
+  Homepage,
+  Search,
+} from "./routes";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <Search />,
+      },
+      {
+        path: "history",
+        element: <History />,
       },
     ],
   },
