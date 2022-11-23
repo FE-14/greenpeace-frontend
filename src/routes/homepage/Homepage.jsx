@@ -93,12 +93,12 @@ export default function Homepage() {
                 <h1 className="mb-3 mt-8 font-montserrat text-3xl font-bold text-green-600 lg:text-5xl ">
                   Tentang Kami
                 </h1>
-                <h2 className="my-5 mb-3 font-montserrat text-lg text-black">
+                <h2 className="my-5 mb-3 font-montserrat text-lg text-black lg:text-2xl">
                   Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh
                   solusi. Butuh perubahan. Butuh aksi.
                 </h2>
               </div>
-              <p className="mb-4 font-source-sans-pro text-base text-black ">
+              <p className="mb-4 font-source-sans-pro text-base text-black lg:text-lg ">
                 Di seluruh dunia, kita berdiri bersama-sama dengan masyarakat,
                 menuntut pertanggung jawaban berbagai pemerintahan dan
                 perusahaan untuk bertanggung jawab. Mulai dari jalanan hingga ke
