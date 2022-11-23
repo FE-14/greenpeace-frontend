@@ -1,14 +1,16 @@
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { FaRegCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import {
+  bgIntroAbout1,
+  bgIntroAbout2,
   greenBigOutlineHalfOutboard,
   greenLineIllustration,
   greenOutlineHalfArtboard,
   homepageHero,
-  imageIntro,
-  imageIntroCover,
 } from "../../assets";
 
 import {
@@ -66,38 +68,63 @@ export default function Homepage() {
         <img
           src={homepageHero}
           alt="Homepage Hero"
-          className="-z-50 max-h-[776px] min-h-[286px] w-full bg-contain bg-no-repeat object-cover"
+          className="-z-50 max-h-[776px] min-h-[346px] w-full bg-contain bg-no-repeat object-cover"
         />
-        <div className="absolute top-[45%] left-8 font-montserrat sm:left-10 md:left-20 lg:left-32 xl:left-40 2xl:left-44">
-          <h1 className="my-1 text-lg font-bold text-white sm:text-2xl md:text-4xl lg:my-4 lg:text-6xl">
+        <div className="absolute top-[45%] left-6 font-montserrat sm:left-10 md:left-20 lg:left-32 xl:left-40 2xl:left-44">
+          <h1 className="my-2 text-2xl font-bold text-white md:text-4xl lg:my-4 lg:text-6xl">
             Semesta ku jatuh
           </h1>
-          <h1 className="my-1 text-lg font-bold text-white sm:text-2xl md:text-4xl lg:my-4 lg:text-6xl">
+          <h1 className="my-2 text-2xl font-bold text-white md:text-4xl lg:my-4 lg:text-6xl">
             hati pada mu.
           </h1>
         </div>
       </figure>
-      <div className="flex flex-col">
-        <section className=" gap-8 relative basic-padding my-12 flex items-center">
-          <div className="w-1/2">
-            <img src={greenLineIllustration} alt="" />
-            <h1 className="font-montserrat text-green-600 md:text-4xl lg:text-5xl font-bold mb-3 mt-8">Tentang Kami</h1>
-            <h2 className="font-montserrat text-black text-lg mb-3">
-              Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh
-              solusi. Butuh perubahan. Butuh aksi.
-            </h2>
-            <p className="font-source-sans-pro text-black text-base mb-4 ">
-              Di seluruh dunia, kita berdiri bersama-sama dengan masyarakat,
-              menuntut pertanggung jawaban berbagai pemerintahan dan perusahaan
-              untuk bertanggung jawab. Mulai dari jalanan hingga ke tempat para
-              pengambil keputusan, kita mempunyai kekuatan nyata jika kita
-              bekerja sama.
-            </p>
-            <button className="inline-block px-6 py-2.5 bg-orange-500 text-white font-source-sans-pro font-bold text-xs leading-tight  rounded shadow-md hover:bg-orange-600 hover:shadow-lg transition duration-150 ease-in-out" type="button">Tentang Kami</button>
+      <div className="flex flex-col items-center">
+        <section className="basic-padding relative my-4 grid items-center gap-12 py-4 md:my-12 md:grid-cols-2 lg:mt-20 xl:my-20 2xl:gap-24">
+          <div className="flex flex-col justify-between gap-4 lg:gap-8 xl:gap-12">
+            <img
+              src={greenLineIllustration}
+              className="hidden h-full object-cover md:block"
+              alt=""
+            />
+
+            <div className="flex flex-col gap-2 lg:gap-4">
+              <div className="">
+                <h1 className="mb-3 mt-8 font-montserrat text-3xl font-bold text-green-600 lg:text-5xl ">
+                  Tentang Kami
+                </h1>
+                <h2 className="my-5 mb-3 font-montserrat text-lg text-black">
+                  Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh
+                  solusi. Butuh perubahan. Butuh aksi.
+                </h2>
+              </div>
+              <p className="mb-4 font-source-sans-pro text-base text-black ">
+                Di seluruh dunia, kita berdiri bersama-sama dengan masyarakat,
+                menuntut pertanggung jawaban berbagai pemerintahan dan
+                perusahaan untuk bertanggung jawab. Mulai dari jalanan hingga ke
+                tempat para pengambil keputusan, kita mempunyai kekuatan nyata
+                jika kita bekerja sama.
+              </p>
+            </div>
+            <Link
+              to="/about"
+              className="flex w-max items-center gap-5 bg-orange-500 py-4 px-6 font-source-sans-pro text-lg font-bold leading-tight text-white shadow-md transition 
+              duration-150 ease-in-out hover:bg-orange-600 hover:shadow-lg lg:py-5 lg:px-14 lg:text-xl"
+            >
+              <FaRegCircle className="h-6 w-6 text-current" /> Tentang Kami
+            </Link>
           </div>
-          <div className="flex items-center relative">
-            <img className="drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.25)) " src={imageIntroCover} alt=""/>
-            <img className="absolute" src={imageIntro} alt="" />
+          <div className="relative hidden h-full md:block lg:h-[420px]">
+            <img
+              className="hidden object-cover shadow-2xl lg:absolute lg:-top-4 lg:-right-0 lg:block"
+              src={bgIntroAbout1}
+              alt=""
+            />
+            <img
+              className="h-full object-cover shadow-2xl lg:absolute lg:-bottom-4 lg:-left-4 lg:h-auto"
+              src={bgIntroAbout2}
+              alt=""
+            />
           </div>
         </section>
         <HomepageSection
