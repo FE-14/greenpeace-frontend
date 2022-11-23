@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
-import { getDetailPostData } from "../../libs";
+import { useGetDetailPost } from "../../hooks";
 
 import { Article, DetailArticleSkeleton } from "./components";
 
@@ -10,7 +10,7 @@ export default function DetailArticle() {
 
   const { articleId } = useParams();
 
-  const { postData, isLoading } = getDetailPostData(`${URL}/${articleId}`);
+  const { postData, isLoading } = useGetDetailPost(`${URL}/${articleId}`);
 
   return (
     <>

@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaRegCircle } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import {
@@ -12,11 +12,13 @@ import {
   greenOutlineHalfArtboard,
   homepageHero,
 } from "../../assets";
+import { getPostsData } from "../../features/posts/postsSlice";
 
 import {
   ActivistDigitalCard,
   HomepageArticles,
   HomepageSection,
+  HomepageSkeleton,
 } from "./components";
 
 export default function Homepage() {
@@ -24,6 +26,12 @@ export default function Homepage() {
   const { digitalActivistData } = useSelector((store) => store.homepage);
 
   const [currentArticleNumber, setCurrentArticleNumber] = useState(1);
+  const dispatch = useDispatch();
+  const URL = import.meta.env.VITE_POSTS_API_1;
+
+  useEffect(() => {
+    dispatch(getPostsData(URL));
+  }, []);
 
   const currentArticle = useMemo(
     () => postData[currentArticleNumber - 1],
@@ -131,7 +139,7 @@ export default function Homepage() {
           headerText="Artikel Terbaru"
           descriptionText="Baca tentang beberapa kemenangan, tragedi, dan momen penting lainnya dari Greenpeace 50 tahun terakhir."
         >
-          {isLoading && <h1>Loading ...</h1>}
+          {isLoading && <HomepageSkeleton />}
           {postData && !isLoading && (
             <HomepageArticles
               key={currentArticle.id}
