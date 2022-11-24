@@ -37,12 +37,12 @@ export default function Footer() {
   return (
     <footer className="flex w-full flex-col items-center bg-green-gp-900 py-8">
       <ScrollRestoration />
-      <div className="container flex w-full flex-col items-center justify-between px-8 lg:flex-row">
-        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-center">
+      <div className="container flex w-full items-center justify-between px-8 lg:flex-row">
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-2 text-center">
           <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-2xl">
             Artikel
           </h2>
-          <ul className="flex items-center gap-4 text-white md:gap-8 lg:flex-col lg:gap-2">
+          <ul className="flex flex-col items-center text-white">
             {articlesSubSections.map((section) => (
               <li key={section}>
                 <FooterLink
@@ -56,7 +56,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="mb-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-3 xl:gap-4">
+        <div className="mt-9 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-2 xl:gap-4">
           <h2 className="text-xl font-semibold md:text-2xl">Contact Us</h2>
           <div className="flex items-center gap-4 text-xl xl:text-2xl">
             {contacts.map((contact) => (
