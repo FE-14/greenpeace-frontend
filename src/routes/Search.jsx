@@ -81,7 +81,7 @@ export default function Search() {
             <input
               type="search"
               id="search-field"
-              className="w-full p-2 outline-none bg-transparent h-9"
+              className="h-9 w-full bg-transparent p-2 outline-none"
               placeholder="Telusuri judul artikel ..."
               value={searchValue}
               onChange={handleChangeSearchValue}
