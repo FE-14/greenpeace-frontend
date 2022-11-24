@@ -1,3 +1,5 @@
+import aboutUsLogo from "./images/about-greenpeace.png";
+import artboardRectangle from "./images/artboard-rectangle.png";
 import articleHero from "./images/article-hero.webp";
 import bgIntroAbout1 from "./images/bg-intro-about-1.png";
 import bgIntroAbout2 from "./images/bg-intro-about-2.png";
@@ -7,10 +9,14 @@ import greenLineIllustration from "./images/green-line-illustration.png";
 import greenOutlineHalfArtboard from "./images/green-outline-half-artboard.png";
 import greenpeaceLogoWhite from "./images/greenpeace-logo-white.png";
 import historyCover from "./images/history-cover.png";
+import historyLogo from "./images/history-greenpeace.png";
 import homepageHero from "./images/homepage-hero.webp";
+import victoryLogo from "./images/victory-greenpeace.png";
 import whiteLineIllustration from "./images/white-line-illustration.png";
 
 export {
+  aboutUsLogo,
+  artboardRectangle,
   articleHero,
   bgIntroAbout1,
   bgIntroAbout2,
@@ -20,6 +26,8 @@ export {
   greenOutlineHalfArtboard,
   greenpeaceLogoWhite,
   historyCover,
+  historyLogo,
   homepageHero,
+  victoryLogo,
   whiteLineIllustration,
 };
