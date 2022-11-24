@@ -118,15 +118,15 @@ export default function Navbar({ forErrorElement }) {
                     items={[
                       {
                         children: "Tentang Kami",
-                        to: "/tentang",
+                        to: "/about",
                       },
                       {
                         children: "Sejarah Greenpeace",
-                        to: "/sejarah",
+                        to: "/history",
                       },
                       {
                         children: "Kemenangan Greenpeace",
-                        to: "/kemenangan",
+                        to: "/our-victory",
                       },
                     ]}
                     setNavbarIsOpen={setNavbarIsOpen}
