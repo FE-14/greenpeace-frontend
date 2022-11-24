@@ -33,10 +33,7 @@ export default function DetailArticle() {
         <meta property="og:description" content={postData?.postDescription} />
         <meta
           property="og:image"
-          content={
-            postData?.imageUrl ||
-            "/src/assets/images/greenpeace-indonesia-home.png"
-          }
+          content={postData?.imageUrl || "/greenpeace-indonesia-home.png"}
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -48,10 +45,7 @@ export default function DetailArticle() {
         />
         <meta
           property="twitter:image"
-          content={
-            postData?.imageUrl ||
-            "/src/assets/images/greenpeace-indonesia-home.png"
-          }
+          content={postData?.imageUrl || "/greenpeace-indonesia-home.png"}
         />
       </Helmet>
 
