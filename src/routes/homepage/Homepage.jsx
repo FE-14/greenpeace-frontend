@@ -93,11 +93,11 @@ export default function Homepage() {
             <img
               src={greenLineIllustration}
               className="hidden h-full object-cover md:block"
-              alt=""
+              alt="Green Line Illustration"
             />
 
             <div className="flex flex-col gap-2 lg:gap-4">
-              <div className="">
+              <div>
                 <h1 className="mb-3 mt-8 font-montserrat text-3xl font-bold text-green-600 lg:text-5xl ">
                   Tentang Kami
                 </h1>
@@ -126,12 +126,12 @@ export default function Homepage() {
             <img
               className="hidden object-cover shadow-2xl lg:absolute lg:-top-4 lg:-right-0 lg:block"
               src={bgIntroAbout1}
-              alt=""
+              alt="Greenpeace Cover 1"
             />
             <img
               className="h-full object-cover shadow-2xl lg:absolute lg:-bottom-4 lg:-left-4 lg:h-auto"
               src={bgIntroAbout2}
-              alt=""
+              alt="Greenpeace Cover 2"
             />
           </div>
         </section>
