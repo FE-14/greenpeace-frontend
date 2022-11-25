@@ -95,7 +95,7 @@ export default function History() {
           Lainnya Tentang Kami
         </div>
         <div className="container mx-auto mb-4 justify-center gap-8 px-6 font-montserrat sm:flex">
-          <Card type="aboutUs" />
+          <Card type="about" />
           <Card type="victory" />
         </div>
       </section>
