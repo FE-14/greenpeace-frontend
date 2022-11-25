@@ -2,9 +2,6 @@ import { Helmet } from "react-helmet-async";
 
 import { artboardRectangle, historyCover } from "../../assets";
 import { Card } from "../../components";
-import CardKemenanganGreenpeace from "../../components/AnotherAboutGreenpeace/components/CardKemenanganGreenpecae";
-import CardSejarahGreenpeace from "../../components/AnotherAboutGreenpeace/components/CardSejarahGreenpeace";
-import CardTentangKami from "../../components/AnotherAboutGreenpeace/components/CardTentangKami";
 
 export default function History() {
   return (
@@ -98,9 +95,8 @@ export default function History() {
           Lainnya Tentang Kami
         </div>
         <div className="container mx-auto mb-4 justify-center gap-8 px-6 font-montserrat sm:flex">
-          <CardTentangKami />
-          <CardKemenanganGreenpeace />
-          <Card type="history" />
+          <Card type="aboutUs" />
+          <Card type="victory" />
         </div>
       </section>
     </>
