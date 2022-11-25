@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 import { artboardRectangle, historyCover } from "../../assets";
 import CardKemenanganGreenpeace from "../../components/AnotherAboutGreenpeace/components/CardKemenanganGreenpecae";
 import CardSejarahGreenpeace from "../../components/AnotherAboutGreenpeace/components/CardSejarahGreenpeace";
@@ -6,6 +8,35 @@ import CardTentangKami from "../../components/AnotherAboutGreenpeace/components/
 export default function History() {
   return (
     <>
+      <Helmet>
+        <title>History | Greenpeace Indonesia</title>
+        <meta name="title" content="Greenpeace Indonesia" />
+        <meta
+          name="description"
+          content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:title" content="Greenpeace Indonesia" />
+        <meta
+          property="og:description"
+          content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
+        />
+        <meta property="og:image" content="/greenpeace-indonesia-home.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Greenpeace Indonesia" />
+        <meta
+          property="twitter:description"
+          content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
+        />
+        <meta
+          property="twitter:image"
+          content="/greenpeace-indonesia-home.png"
+        />
+      </Helmet>
       <figure className="relative">
         <img
           src={historyCover}
