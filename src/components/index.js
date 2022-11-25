@@ -1,5 +1,5 @@
-import Card from "./AnotherAboutGreenpeace/Card";
 import ArticleCard from "./ArticleCard";
+import Card from "./CardGreenpeace";
 import ReadMoreArticleLink from "./ReadMoreArticleLink";
 import RootLayout from "./RootLayout";
 import SkeletonArticles from "./SkeletonArticles";
