@@ -42,16 +42,16 @@ export default function Footer() {
   return (
     <footer className="flex w-full flex-col items-center bg-green-gp-900 py-4">
       <ScrollRestoration />
-      <div className="container flex w-full items-center justify-between px-8 lg:flex-row ">
-        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-left">
+      <div className="container flex items-center justify-between p-4">
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 text-left">
           <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-xl">
             Kenali Greenpeace
           </h2>
-          <ul className="flex flex-col gap-4 text-white md:gap-1 lg:gap-2">
+          <ul className="flex flex-col text-white pr-14 md:gap-1 lg:gap-2">
             {articlesSubSections.map((article) => (
               <li key={article}>
                 <FooterLink
-                  to={`aboutme?category=${article}`}
+                  to={`${article}`}
                   className="hover:brightness-[80%]"
                 >
                   {article}
@@ -61,7 +61,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-left">
+        <div className="mb-8 flex flex-col items-center gap-4 text-left">
           <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-xl">
             Artikel
           </h2>
