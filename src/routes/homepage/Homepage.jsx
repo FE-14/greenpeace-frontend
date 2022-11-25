@@ -55,10 +55,7 @@ export default function Homepage() {
           property="og:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
-        <meta
-          property="og:image"
-          content="/src/assets/images/greenpeace-indonesia-home.png"
-        />
+        <meta property="og:image" content="/greenpeace-indonesia-home.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://metatags.io/" />
@@ -69,7 +66,7 @@ export default function Homepage() {
         />
         <meta
           property="twitter:image"
-          content="/src/assets/images/greenpeace-indonesia-home.png"
+          content="/greenpeace-indonesia-home.png"
         />
       </Helmet>
       <figure className="relative">
