@@ -32,18 +32,41 @@ export default function Footer() {
     },
   ];
 
-  const articlesSubSections = ["Semua", "Krisis Iklim", "Hutan", "Polusi"];
+  const articlesSubSections = [
+    "Tentang Kami",
+    "Sejarah Greenpeace",
+    "Kemenangan",
+  ];
+  const articlesSubSectionstwo = ["Semua", "Krisis Iklim", "Hutan", "Polusi"];
 
   return (
-    <footer className="flex w-full flex-col items-center bg-green-gp-900 py-8">
+    <footer className="flex w-full flex-col items-center bg-green-gp-900 py-4">
       <ScrollRestoration />
-      <div className="container flex w-full flex-col items-center justify-between px-8 lg:flex-row">
-        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-center">
-          <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-2xl">
+      <div className="container flex w-full items-center justify-between px-8 lg:flex-row ">
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-left">
+          <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-xl">
+            Kenali Greenpeace
+          </h2>
+          <ul className="flex flex-col gap-4 text-white md:gap-1 lg:gap-2">
+            {articlesSubSections.map((article) => (
+              <li key={article}>
+                <FooterLink
+                  to={`aboutme?category=${article}`}
+                  className="hover:brightness-[80%]"
+                >
+                  {article}
+                </FooterLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 p-4 text-left">
+          <h2 className="border-b-2 border-b-green-gp-400 font-montserrat text-xl font-bold text-green-400 md:text-xl">
             Artikel
           </h2>
-          <ul className="flex items-center gap-4 text-white md:gap-8 lg:flex-col lg:gap-2">
-            {articlesSubSections.map((section) => (
+          <ul className="flex flex-col gap-4 text-white md:gap-1 lg:gap-2">
+            {articlesSubSectionstwo.map((section) => (
               <li key={section}>
                 <FooterLink
                   to={`articles?category=${section}`}
@@ -56,7 +79,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="mb-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-3 xl:gap-4">
+        <div className="mt-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-2 xl:gap-4">
           <h2 className="text-xl font-semibold md:text-2xl">Contact Us</h2>
           <div className="flex items-center gap-4 text-xl xl:text-2xl">
             {contacts.map((contact) => (
@@ -77,12 +100,12 @@ export default function Footer() {
         <img
           src="/src/assets/images/greenpeace-logo-white.png"
           alt="Greenpeace Logo"
-          className="absolute left-8 h-8 bg-green-gp-900 px-4 md:left-16 md:h-11 lg:px-12"
+          className="absolute left-8 h-8 bg-green-gp-900 px-4 md:left-16 md:h-6 lg:px-12"
         />
         <img
           src="/src/assets/images/white-line-illustration.png"
           alt="Artboard Illustration"
-          className="h-8 w-full bg-cover bg-repeat-x object-cover md:h-10"
+          className="h-8 w-full bg-cover bg-repeat-x object-cover md:h-6"
         />
       </div>
     </footer>
