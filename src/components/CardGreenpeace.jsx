@@ -11,7 +11,7 @@ export default function Card({ type }) {
         "Di tahun 1971, dengan motivasi menjadikan dunia menjadi hijau dan damai, sekelompok aktivis berlayar dari Vancouver, Cananda, untuk melakukan protes terhadap rencana uji coba bom nuklir Amerika Serikat di pulau Amchitka, pesisir barat Alasaka ",
     },
 
-    aboutUs: {
+    about: {
       title: "Tentang Kami",
       image: aboutUsLogo,
       description:
