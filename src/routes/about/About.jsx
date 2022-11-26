@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 import { bgIntroAbout1, bgIntroAbout2 } from "../../assets";
+import { SectionGpCard } from "../../components";
 
 import { ArticleList } from "./components";
 
@@ -238,6 +239,15 @@ pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:
                 </ArticleList>
               </ul>
             </article>
+          </div>
+        </section>
+        <section className="basic-padding mt-20 flex flex-col items-center gap-8 lg:gap-12">
+          <h2 className="font-montserrat text-2xl font-bold text-submarine-gp-500 md:text-[28px] 2xl:text-3xl">
+            Lainnya Tentang Kami
+          </h2>
+          <div className="grid w-full gap-4 xs:w-[90%] sm:w-3/4 md:w-full md:grid-cols-2 md:gap-6 lg:w-full 2xl:w-[90%] 3xl:w-4/5 ">
+            <SectionGpCard type="history" />
+            <SectionGpCard type="our-victory" />
           </div>
         </section>
       </div>
