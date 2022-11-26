@@ -241,7 +241,7 @@ pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:
             </article>
           </div>
         </section>
-        <section className="basic-padding mt-20 flex flex-col items-center gap-8 lg:gap-12">
+        <section className="basic-padding m-auto mt-20 flex flex-col items-center gap-8 lg:w-10/12 lg:gap-12">
           <h2 className="font-montserrat text-2xl font-bold text-submarine-gp-500 md:text-[28px] 2xl:text-3xl">
             Lainnya Tentang Kami
           </h2>
