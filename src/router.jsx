@@ -8,6 +8,7 @@ import {
   Error,
   History,
   Homepage,
+  OurVictory,
   Search,
 } from "./routes";
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "our-victory",
+        element: <OurVictory />,
       },
     ],
   },
