@@ -86,7 +86,7 @@ pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:
           </div>
         </figure>
       </section>
-      <div className="my-40 flex flex-col gap-16">
+      <div className="my-20 flex flex-col gap-16">
         <section className="basic-padding flex flex-col gap-8 font-montserrat">
           <h2
             className="w-1/2 font-montserrat text-3xl font-semibold

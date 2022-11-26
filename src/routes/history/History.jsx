@@ -50,7 +50,7 @@ export default function History() {
             </div>
           </div>
         </figure>
-        <div className="m-auto mb-40 flex flex-col gap-20 lg:w-10/12 lg:gap-32">
+        <div className="m-auto mb-20 flex flex-col gap-20 lg:w-10/12 lg:gap-32">
           <section className="basic-padding flex flex-col gap-6 lg:gap-12">
             <h2 className="font-montserrat text-2xl font-bold text-submarine-gp-500 md:text-[28px] 2xl:text-3xl">
               Awal Mula Greenpeace
