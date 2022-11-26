@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-import { artboardRectangle, historyCover } from "../../assets";
+import { historyCover } from "../../assets";
 import { Card } from "../../components";
 
 export default function History() {
@@ -8,10 +8,10 @@ export default function History() {
     <>
       <Helmet>
         <title>History | Greenpeace Indonesia</title>
-        <meta name="title" content="Greenpeace Indonesia" />
+        <meta name="title" content="Sejarah Greenpeace Indonesia" />
         <meta
           name="description"
-          content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
+          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
         />
 
         <meta property="og:type" content="website" />
@@ -19,7 +19,7 @@ export default function History() {
         <meta property="og:title" content="Greenpeace Indonesia" />
         <meta
           property="og:description"
-          content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
+          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
         />
         <meta property="og:image" content="/greenpeace-indonesia-home.png" />
 
@@ -28,7 +28,7 @@ export default function History() {
         <meta property="twitter:title" content="Greenpeace Indonesia" />
         <meta
           property="twitter:description"
-          content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
+          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
         />
         <meta
           property="twitter:image"
@@ -41,51 +41,61 @@ export default function History() {
           alt="Homepage Hero"
           className="-z-50 max-h-[732px] min-h-[286px] w-full bg-contain bg-no-repeat object-cover"
         />
-        <img
-          src={artboardRectangle}
-          alt=""
-          className="min-w-2/5 absolute -bottom-14 h-28 overflow-hidden object-cover sm:left-2 md:left-8 lg:left-12 xl:left-24 xl:max-w-[648px]"
-        />
+        <div
+          className={`absolute -bottom-20 overflow-hidden bg-[url("/src/assets/images/green-full-artboard.png")] bg-cover bg-no-repeat object-cover
+pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:pb-8 xl:left-24`}
+        >
+          <div className="bg-white p-4 shadow-xl md:py-6 md:px-8">
+            <h1 className="font-montserrat text-xs font-bold text-green-gp-400 sm:text-sm lg:text-6xl">
+              Sejarah Greenpeace
+            </h1>
+          </div>
+        </div>
       </figure>
 
-      <section className="basic-padding">
-        <div className="m-auto font-montserrat">
-          <h1 className="mt-36 mb-6 text-4xl font-semibold text-submarine-gp-500 ">
+      <section className="basic-padding mt-40">
+        <div className=" flex flex-col gap-8 font-montserrat">
+          <h2 className="text-4xl font-semibold text-submarine-gp-500 ">
             Awal Mula Greenpeace
-          </h1>
-          <div className="m-auto  text-justify md:ml-14 md:mr-auto lg:ml-20 lg:mr-20">
-            <h3 className="mb-4 font-semibold text-black">
-              Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi
-              hijau dan damai berawal. Sekelompok aktivis berlayar dari
-              Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack.
-              Mereka adalah para aktivis pendiri Greenpeace, mereka percaya
-              bahwa setiap orang dapat melakukan perubahaan.
-            </h3>
-            <p className="mb-5 font-normal lg:text-sm">
-              Misi mereka untuk menyaksikan dampak buruk dari uji coba nuklir
-              yang di lakukan Amerika Serikat di Amchitka, sebuah pulau kecil di
-              pesisir barat Alaska, yang merupakan tempat perlindungan terakhir
-              bagi 3.000 berang-berang dan rumah elang kepala botak dan satwa
-              liar lainnya.
-              <br />
-              <br />
-              Walaupun mereka menggunakan kapal tua bernama Phyllis Cormack,
-              yang mengalami berbagai halangan sebelum sampai di Alaska,
-              perjalanan mereka menimbulkan banyak perhatian publik.
-              <br />
-              <br />
-              Amerika Serikat masih terus mendanai uji coba bom nuklir di
-              Amchitka, tapi suara penolakan terus bergaung dan akhirnya
-              didengar. Pada tahun yang sama, uji coba nuklir berakhir pada
-              tahun yang sama, dan pulau tersebut dideklarasikan menjadi suaka
-              alam untuk burung.
-              <br />
-              <br />
-              Kini, Greenpeace menjadi organisasi internasional yang berkampanye
-              untuk perlindungan lingkungan secara global yang berkantor pusat
-              di Amsterdam, Belanda. Greenpeace mempunyai 2,8 juta pendukung di
-              seluruh dunia dan memiliki kantor regional di 41 negara
-            </p>
+          </h2>
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-8 col-start-2">
+              <p className=" xl:text-xl">
+                <strong className="leading-9 tracking-wide">
+                  Di tahun 1971, motivasi dan visi untuk menjadikan dunia
+                  menjadi hijau dan damai berawal. Sekelompok aktivis berlayar
+                  dari Vancouver, Canada dengan kapal nelayan tua, Phyllis
+                  Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka
+                  percaya bahwa setiap orang dapat melakukan perubahaan.
+                </strong>
+              </p>
+              <p className="font-source-sans-pro font-normal leading-7">
+                Misi mereka untuk menyaksikan dampak buruk dari uji coba nuklir
+                yang di lakukan Amerika Serikat di Amchitka, sebuah pulau kecil
+                di pesisir barat Alaska, yang merupakan tempat perlindungan
+                terakhir bagi 3.000 berang-berang dan rumah elang kepala botak
+                dan satwa liar lainnya.
+                <br />
+                <br />
+                Walaupun mereka menggunakan kapal tua bernama Phyllis Cormack,
+                yang mengalami berbagai halangan sebelum sampai di Alaska,
+                perjalanan mereka menimbulkan banyak perhatian publik.
+                <br />
+                <br />
+                Amerika Serikat masih terus mendanai uji coba bom nuklir di
+                Amchitka, tapi suara penolakan terus bergaung dan akhirnya
+                didengar. Pada tahun yang sama, uji coba nuklir berakhir pada
+                tahun yang sama, dan pulau tersebut dideklarasikan menjadi suaka
+                alam untuk burung.
+                <br />
+                <br />
+                Kini, Greenpeace menjadi organisasi internasional yang
+                berkampanye untuk perlindungan lingkungan secara global yang
+                berkantor pusat di Amsterdam, Belanda. Greenpeace mempunyai 2,8
+                juta pendukung di seluruh dunia dan memiliki kantor regional di
+                41 negara
+              </p>
+            </div>
           </div>
         </div>
       </section>
