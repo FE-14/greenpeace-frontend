@@ -1,3 +1,4 @@
+import About from "./about/About";
 import Articles from "./articles/Articles";
 import DetailArticle from "./detail-article/DetailArticle";
 import History from "./history/History";
@@ -6,4 +7,13 @@ import Error from "./Error";
 import Root from "./Root";
 import Search from "./Search";
 
-export { Articles, DetailArticle, Error, History, Homepage, Root, Search };
+export {
+  About,
+  Articles,
+  DetailArticle,
+  Error,
+  History,
+  Homepage,
+  Root,
+  Search,
+};

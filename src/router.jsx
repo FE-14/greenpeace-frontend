@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import {
+  About,
   Articles,
   DetailArticle,
   Error,
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "history",
         element: <History />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
     ],
   },
