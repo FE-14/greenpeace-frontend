@@ -42,7 +42,7 @@ export default function History() {
             alt="Homepage Hero"
             className="-z-50 max-h-[732px] min-h-[286px] w-full bg-contain bg-no-repeat object-cover"
           />
-          <div className="relative -top-8 left-4 w-max overflow-hidden bg-[url('/src/assets/images/green-full-artboard.png')] bg-cover bg-no-repeat object-cover pr-4 pb-4 md:left-8 md:-top-12 lg:left-[11%] lg:pr-6 lg:pb-6 2xl:left-[14%]">
+          <div className="relative -top-8 left-4 w-max overflow-hidden bg-[url('/src/assets/images/green-full-artboard.webp')] bg-cover bg-no-repeat object-cover pr-4 pb-4 md:left-8 md:-top-12 lg:left-[11%] lg:pr-6 lg:pb-6 2xl:left-[14%]">
             <div className="bg-white p-3 shadow-xl md:py-6 md:px-8">
               <h1 className="font-montserrat text-2xl font-bold text-green-gp-400 sm:text-3xl md:text-4xl lg:text-5xl">
                 Sejarah Greenpeace

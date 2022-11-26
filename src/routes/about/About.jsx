@@ -71,7 +71,7 @@ export default function About() {
             alt="Greenpeace Cover 1"
           />
           <div
-            className={`absolute -bottom-20 h-max max-w-[600px] overflow-hidden bg-[url("/src/assets/images/green-full-artboard.png")] bg-cover bg-no-repeat object-cover
+            className={`absolute -bottom-20 h-max max-w-[600px] overflow-hidden bg-[url("/src/assets/images/green-full-artboard.webp")] bg-cover bg-no-repeat object-cover
 pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:pb-8 xl:left-24 xl:max-w-[648px]`}
           >
             <div className="bg-white">
