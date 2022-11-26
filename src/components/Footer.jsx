@@ -104,7 +104,6 @@ export default function Footer() {
             </ul>
           </div>
         </section>
-
         <section>
           <div className="mb-12 flex flex-col justify-center gap-2 text-center font-montserrat text-white md:gap-3 xl:gap-4">
             <h2 className="text-xl font-semibold md:text-2xl">Contact Us</h2>
