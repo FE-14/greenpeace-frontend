@@ -11,7 +11,7 @@ export default function OurVictory() {
         <meta name="title" content="Sejarah Greenpeace Indonesia" />
         <meta
           name="description"
-          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
+          content="Selama bertahun-tahun, Greenpeace telah melakukan suatu perubahan positif untuk lingkungan dunia dan juga termasuk Asia tenggara. Terima kasih atas bantuanmu. Inilah kemenangan kita, inilah kemenangan untuk lingkungan!"
         />
 
         <meta property="og:type" content="website" />
@@ -19,7 +19,7 @@ export default function OurVictory() {
         <meta property="og:title" content="Greenpeace Indonesia" />
         <meta
           property="og:description"
-          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
+          content="Selama bertahun-tahun, Greenpeace telah melakukan suatu perubahan positif untuk lingkungan dunia dan juga termasuk Asia tenggara. Terima kasih atas bantuanmu. Inilah kemenangan kita, inilah kemenangan untuk lingkungan!"
         />
         <meta property="og:image" content="/greenpeace-indonesia-home.png" />
 
@@ -28,13 +28,14 @@ export default function OurVictory() {
         <meta property="twitter:title" content="Greenpeace Indonesia" />
         <meta
           property="twitter:description"
-          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
+          content="Selama bertahun-tahun, Greenpeace telah melakukan suatu perubahan positif untuk lingkungan dunia dan juga termasuk Asia tenggara. Terima kasih atas bantuanmu. Inilah kemenangan kita, inilah kemenangan untuk lingkungan!"
         />
         <meta
           property="twitter:image"
           content="/greenpeace-indonesia-home.png"
         />
       </Helmet>
+
       <div className="flex flex-col gap-8 pb-16 md:gap-8 xl:gap-12">
         <figure className="">
           <img
