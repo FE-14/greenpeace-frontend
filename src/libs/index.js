@@ -1,4 +1,4 @@
 import formatPublishedDate from "./formatPublishedDate";
-import getDetailPostData from "./getDetailPostData";
+import { fetcher, useSWR } from "./swr";
 
-export { formatPublishedDate, getDetailPostData };
+export { fetcher, formatPublishedDate, useSWR };

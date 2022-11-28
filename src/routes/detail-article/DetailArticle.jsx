@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
-import { getDetailPostData } from "../../libs";
+import { useGetDetailPost } from "../../hooks";
 
 import { Article, DetailArticleSkeleton } from "./components";
 
@@ -10,7 +10,7 @@ export default function DetailArticle() {
 
   const { articleId } = useParams();
 
-  const { postData, isLoading } = getDetailPostData(`${URL}/${articleId}`);
+  const { postData, isLoading } = useGetDetailPost(`${URL}/${articleId}`);
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function DetailArticle() {
         <meta name="description" content={postData?.postDescription} />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:url" content="https://greenpeace.netlify.app/" />
         <meta
           property="og:title"
           content={postData?.title || "Artikel Greenpeace Indonesia"}
@@ -33,14 +33,14 @@ export default function DetailArticle() {
         <meta property="og:description" content={postData?.postDescription} />
         <meta
           property="og:image"
-          content={
-            postData?.imageUrl ||
-            "/src/assets/images/greenpeace-indonesia-home.png"
-          }
+          content={postData?.imageUrl || "/greenpeace-indonesia-home.png"}
         />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
         <meta property="twitter:title" content="Greenpeace Indonesia" />
         <meta
           property="twitter:description"
@@ -48,10 +48,7 @@ export default function DetailArticle() {
         />
         <meta
           property="twitter:image"
-          content={
-            postData?.imageUrl ||
-            "/src/assets/images/greenpeace-indonesia-home.png"
-          }
+          content={postData?.imageUrl || "/greenpeace-indonesia-home.png"}
         />
       </Helmet>
 
