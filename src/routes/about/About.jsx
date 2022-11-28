@@ -9,32 +9,44 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About | Greenpeace Indonesia</title>
-        <meta name="title" content="Greenpeace Indonesia" />
+        <title>Tentang Kami | Greenpeace Indonesia</title>
+        <meta name="title" content="Tentang Kami | Greenpeace Indonesia" />
         <meta
           name="description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
-        <meta property="og:title" content="Greenpeace Indonesia" />
+        <meta
+          property="og:url"
+          content="https://greenpeace.netlify.app/about"
+        />
+        <meta
+          property="og:title"
+          content="Tentang Kami | Greenpeace Indonesia"
+        />
         <meta
           property="og:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
-        <meta property="og:image" content="/greenpeace-indonesia-home.png" />
+        <meta property="og:image" content="/greenpeace-indonesia-about.webp" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
-        <meta property="twitter:title" content="Greenpeace Indonesia" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
+        <meta
+          property="twitter:title"
+          content="Tentang Kami | Greenpeace Indonesia"
+        />
         <meta
           property="twitter:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
         <meta
           property="twitter:image"
-          content="/greenpeace-indonesia-home.png"
+          content="/greenpeace-indonesia-about.webp"
         />
       </Helmet>
       <figure className="absolute -z-10 h-[calc(100vh/1.25)] w-screen opacity-[12%]">

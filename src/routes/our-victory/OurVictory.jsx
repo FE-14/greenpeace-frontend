@@ -138,32 +138,44 @@ export default function OurVictory() {
   return (
     <>
       <Helmet>
-        <title>History | Greenpeace Indonesia</title>
-        <meta name="title" content="Sejarah Greenpeace Indonesia" />
+        <title>Kemenangan | Greenpeace Indonesia</title>
+        <meta name="title" content="Kemenangan | Greenpeace Indonesia" />
         <meta
           name="description"
           content="Selama bertahun-tahun, Greenpeace telah melakukan suatu perubahan positif untuk lingkungan dunia dan juga termasuk Asia tenggara. Terima kasih atas bantuanmu. Inilah kemenangan kita, inilah kemenangan untuk lingkungan!"
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
-        <meta property="og:title" content="Greenpeace Indonesia" />
+        <meta
+          property="og:url"
+          content="https://greenpeace.netlify.app/our-victory"
+        />
+        <meta property="og:title" content="Kemenangan | Greenpeace Indonesia" />
         <meta
           property="og:description"
           content="Selama bertahun-tahun, Greenpeace telah melakukan suatu perubahan positif untuk lingkungan dunia dan juga termasuk Asia tenggara. Terima kasih atas bantuanmu. Inilah kemenangan kita, inilah kemenangan untuk lingkungan!"
         />
-        <meta property="og:image" content="/greenpeace-indonesia-home.png" />
+        <meta
+          property="og:image"
+          content="/greenpeace-indonesia-our-victory.webp"
+        />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
-        <meta property="twitter:title" content="Greenpeace Indonesia" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
+        <meta
+          property="twitter:title"
+          content="Kemenangan | Greenpeace Indonesia"
+        />
         <meta
           property="twitter:description"
           content="Selama bertahun-tahun, Greenpeace telah melakukan suatu perubahan positif untuk lingkungan dunia dan juga termasuk Asia tenggara. Terima kasih atas bantuanmu. Inilah kemenangan kita, inilah kemenangan untuk lingkungan!"
         />
         <meta
           property="twitter:image"
-          content="/greenpeace-indonesia-home.png"
+          content="/greenpeace-indonesia-our-victory.webp"
         />
       </Helmet>
 
