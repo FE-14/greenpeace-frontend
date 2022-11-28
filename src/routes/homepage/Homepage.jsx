@@ -41,8 +41,8 @@ export default function Homepage() {
   return (
     <>
       <Helmet>
-        <title>Beranda | Greenpeace Indonesia</title>
-        <meta name="title" content="Beranda | Greenpeace Indonesia" />
+        <title>Home | Greenpeace Indonesia</title>
+        <meta name="title" content="Greenpeace Indonesia" />
         <meta
           name="description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
@@ -50,7 +50,7 @@ export default function Homepage() {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://metatags.io/" />
-        <meta property="og:title" content="Beranda | Greenpeace Indonesia" />
+        <meta property="og:title" content="Greenpeace Indonesia" />
         <meta
           property="og:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
@@ -59,10 +59,7 @@ export default function Homepage() {
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://metatags.io/" />
-        <meta
-          property="twitter:title"
-          content="Beranda | Greenpeace Indonesia"
-        />
+        <meta property="twitter:title" content="Greenpeace Indonesia" />
         <meta
           property="twitter:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
