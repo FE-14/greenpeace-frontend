@@ -9,32 +9,44 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About | Greenpeace Indonesia</title>
-        <meta name="title" content="Greenpeace Indonesia" />
+        <title>Tentang Kami | Greenpeace Indonesia</title>
+        <meta name="title" content="Tentang Kami | Greenpeace Indonesia" />
         <meta
           name="description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
-        <meta property="og:title" content="Greenpeace Indonesia" />
+        <meta
+          property="og:url"
+          content="https://greenpeace.netlify.app/about"
+        />
+        <meta
+          property="og:title"
+          content="Tentang Kami | Greenpeace Indonesia"
+        />
         <meta
           property="og:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
-        <meta property="og:image" content="/greenpeace-indonesia-home.png" />
+        <meta property="og:image" content="/greenpeace-indonesia-about.webp" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
-        <meta property="twitter:title" content="Greenpeace Indonesia" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
+        <meta
+          property="twitter:title"
+          content="Tentang Kami | Greenpeace Indonesia"
+        />
         <meta
           property="twitter:description"
           content="Greenpeace hadir karena bumi yang rapuh ini perlu suara. Butuh solusi. Butuh perubahan. Butuh aksi. Greenpeace memiliki landasan prinsip dan nilai-nilai dasar yang tercermin dalam setiap aksi kampanye lingkungan kami."
         />
         <meta
           property="twitter:image"
-          content="/greenpeace-indonesia-home.png"
+          content="/greenpeace-indonesia-about.webp"
         />
       </Helmet>
       <figure className="absolute -z-10 h-[calc(100vh/1.25)] w-screen opacity-[12%]">
@@ -71,7 +83,7 @@ export default function About() {
             alt="Greenpeace Cover 1"
           />
           <div
-            className={`absolute -bottom-20 h-max max-w-[600px] overflow-hidden bg-[url("/src/assets/images/green-full-artboard.png")] bg-cover bg-no-repeat object-cover
+            className={`absolute -bottom-20 h-max max-w-[600px] overflow-hidden bg-[url("/src/assets/images/green-full-artboard.webp")] bg-cover bg-no-repeat object-cover
 pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:pb-8 xl:left-24 xl:max-w-[648px]`}
           >
             <div className="bg-white">
@@ -86,7 +98,7 @@ pr-4 pb-4 xs:-bottom-16 sm:left-4 md:left-8 lg:left-16 lg:-bottom-20 lg:pr-8 lg:
           </div>
         </figure>
       </section>
-      <div className="my-20 flex flex-col gap-16">
+      <div className="mb-20 mt-40 flex flex-col gap-16">
         <section className="basic-padding flex flex-col gap-8 font-montserrat">
           <h2
             className="w-1/2 font-montserrat text-3xl font-semibold

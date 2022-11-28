@@ -24,7 +24,7 @@ export default function DetailArticle() {
         <meta name="description" content={postData?.postDescription} />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
+        <meta property="og:url" content="https://greenpeace.netlify.app/" />
         <meta
           property="og:title"
           content={postData?.title || "Artikel Greenpeace Indonesia"}
@@ -37,7 +37,10 @@ export default function DetailArticle() {
         />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
         <meta property="twitter:title" content="Greenpeace Indonesia" />
         <meta
           property="twitter:description"

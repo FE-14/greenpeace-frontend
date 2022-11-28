@@ -104,7 +104,45 @@ export default function Articles() {
   return (
     <>
       <Helmet>
-        <title>Articles | Greenpeace Indonesia</title>
+        <title>Artikel | Greenpeace Indonesia</title>
+        <meta name="title" content="Artikel | Greenpeace Indonesia" />
+        <meta
+          name="description"
+          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://greenpeace.netlify.app/articles"
+        />
+        <meta property="og:title" content="Artikel | Greenpeace Indonesia" />
+        <meta
+          property="og:description"
+          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
+        />
+        <meta
+          property="og:image"
+          content="/greenpeace-indonesia-articles.webp"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
+        <meta
+          property="twitter:title"
+          content="Artikel | Greenpeace Indonesia"
+        />
+        <meta
+          property="twitter:description"
+          content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
+        />
+        <meta
+          property="twitter:image"
+          content="/greenpeace-indonesia-articles.webp"
+        />
       </Helmet>
 
       <figure className="relative bg-green-gp-800/80">

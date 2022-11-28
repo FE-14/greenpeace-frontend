@@ -7,42 +7,54 @@ export default function History() {
   return (
     <>
       <Helmet>
-        <title>History | Greenpeace Indonesia</title>
-        <meta name="title" content="Sejarah Greenpeace Indonesia" />
+        <title>Sejarah | Greenpeace Indonesia</title>
+        <meta name="title" content="Sejarah | Greenpeace Indonesia" />
         <meta
           name="description"
           content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
         />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
-        <meta property="og:title" content="Greenpeace Indonesia" />
+        <meta
+          property="og:url"
+          content="https://greenpeace.netlify.app/history"
+        />
+        <meta property="og:title" content="Sejarah | Greenpeace Indonesia" />
         <meta
           property="og:description"
           content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
         />
-        <meta property="og:image" content="/greenpeace-indonesia-home.png" />
+        <meta
+          property="og:image"
+          content="/greenpeace-indonesia-history.webp"
+        />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
-        <meta property="twitter:title" content="Greenpeace Indonesia" />
+        <meta
+          property="twitter:url"
+          content="https://twitter.com/greenpeaceid"
+        />
+        <meta
+          property="twitter:title"
+          content="Sejarah | Greenpeace Indonesia"
+        />
         <meta
           property="twitter:description"
           content="Di tahun 1971, motivasi dan visi untuk menjadikan dunia menjadi hijau dan damai berawal. Sekelompok aktivis berlayar dari Vancouver, Canada dengan kapal nelayan tua, Phyllis Cormack. Mereka adalah para aktivis pendiri Greenpeace, mereka percaya bahwa setiap orang dapat melakukan perubahaan."
         />
         <meta
           property="twitter:image"
-          content="/greenpeace-indonesia-home.png"
+          content="/greenpeace-indonesia-history.webp"
         />
       </Helmet>
       <div className="flex flex-col gap-8 pb-16 md:gap-8 xl:gap-12">
-        <figure className="">
+        <figure>
           <img
             src={historyCover}
             alt="Homepage Hero"
             className="-z-50 max-h-[732px] min-h-[286px] w-full bg-contain bg-no-repeat object-cover"
           />
-          <div className="relative -top-8 left-4 w-max overflow-hidden bg-[url('/src/assets/images/green-full-artboard.png')] bg-cover bg-no-repeat object-cover pr-4 pb-4 md:left-8 md:-top-12 lg:left-[11%] lg:pr-6 lg:pb-6 2xl:left-[14%]">
+          <div className="relative -top-8 left-4 w-max overflow-hidden bg-[url('/src/assets/images/green-full-artboard.webp')] bg-cover bg-no-repeat object-cover pr-4 pb-4 md:left-8 md:-top-12 lg:left-[11%] lg:pr-6 lg:pb-6 2xl:left-[14%]">
             <div className="bg-white p-3 shadow-xl md:py-6 md:px-8">
               <h1 className="font-montserrat text-2xl font-bold text-green-gp-400 sm:text-3xl md:text-4xl lg:text-5xl">
                 Sejarah Greenpeace

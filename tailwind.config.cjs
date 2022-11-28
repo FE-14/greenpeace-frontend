@@ -57,7 +57,7 @@ module.exports = {
       backgroundImage: {
         "homepage-hero": "url('/src/assets/images/homepage-hero.webp')",
         "green-full-artboard":
-          "url(/src/assets/images/green-full-artboard.png)",
+          "url(/src/assets/images/green-full-artboard.webp)",
       },
     },
   },
