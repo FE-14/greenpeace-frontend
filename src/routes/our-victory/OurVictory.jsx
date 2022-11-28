@@ -221,7 +221,7 @@ export default function OurVictory() {
             </h2>
             <div className="grid w-full gap-4 xs:w-[90%] sm:w-3/4 md:w-full md:grid-cols-2 md:gap-6 lg:w-full 2xl:w-[90%] 3xl:w-4/5 ">
               <SectionGpCard type="about" />
-              <SectionGpCard type="our-victory" />
+              <SectionGpCard type="history" />
             </div>
           </section>
         </div>
