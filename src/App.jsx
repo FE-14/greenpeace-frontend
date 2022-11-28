@@ -3,11 +3,9 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 
 import { Root } from "./routes";
 
-const helmetContext = {};
-
 function App() {
   return (
-    <HelmetProvider context={helmetContext}>
+    <HelmetProvider>
       <Root>
         <ScrollRestoration
           getKey={(location) => {
