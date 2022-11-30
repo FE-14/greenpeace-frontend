@@ -1,8 +1,7 @@
 import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import Footer from "../components/Footer";
-import Navbar from "../components/navbar/Navbar";
+import { Footer, Navbar } from "../components";
 
 export default function Error() {
   const errorResponse = useRouteError();
