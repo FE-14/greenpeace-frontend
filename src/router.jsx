@@ -9,6 +9,7 @@ import {
   Error,
   History,
   Homepage,
+  Login,
   OurVictory,
   Search,
 } from "./routes";
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+    children: [
+      {
+        path: "login",
+        element: <Login />,
+      },
+    ],
   },
 ]);
 
