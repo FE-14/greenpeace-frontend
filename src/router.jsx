@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import {
   About,
+  Admin,
   Articles,
   DetailArticle,
   Error,
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         element: <OurVictory />,
       },
     ],
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
 ]);
 
