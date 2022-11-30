@@ -5,7 +5,7 @@ export default function Login() {
   const [errorIsOpen, setErrorIsOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-cover bg-no-repeat object-cover">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-green-gp-50/20 bg-cover bg-no-repeat object-cover">
       <div className="flex flex-col items-center justify-center gap-12 bg-green-gp-50 p-8 backdrop-blur-sm lg:p-12 xl:p-16 2xl:p-20 3xl:p-24">
         <h1 className="font-montserrat text-3xl font-bold text-green-gp-700 md:text-2xl lg:text-3xl">
           Masuk
