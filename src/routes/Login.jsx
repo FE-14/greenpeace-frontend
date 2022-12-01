@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { CgSpinner } from "react-icons/cg";
 import { HiOutlineLockClosed, HiOutlineMail, HiX } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
 
 import { useAuth } from "../hooks";
 import { axios } from "../libs";
 
 export default function Login() {
-  const { setAuth } = useAuth();
+  const { setAuth, auth } = useAuth();
+
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -36,6 +40,8 @@ export default function Login() {
           password,
           token: response?.data?.accessToken,
         });
+
+        navigate("/admin/dashboard", { replace: true });
       } catch (error) {
         setIsError(true);
       } finally {
@@ -43,6 +49,12 @@ export default function Login() {
       }
     })();
   };
+
+  useEffect(() => {
+    if (auth?.token) {
+      navigate("/admin/dashboard", { replace: true });
+    }
+  }, []);
 
   return (
     <>
