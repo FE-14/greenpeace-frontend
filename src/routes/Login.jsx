@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { HiOutlineLockClosed, HiOutlineMail, HiX } from "react-icons/hi";
 import axios from "axios";
 
+import AuthContext from "../context/AuthProvider";
+
 export default function Login() {
   const URL = import.meta.env.VITE_API_URL;
+  const { setAuth } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
