@@ -1,15 +1,21 @@
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+
+import { useAuth } from "../../hooks";
 
 export default function Admin() {
   const navigate = useNavigate();
+  const { auth } = useAuth();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    if (sessionStorage.getItem("adminToken") === null) {
-      navigate("login");
+    if (auth?.token === undefined) {
+      navigate("login", { replace: true });
+    } else {
+      navigate("dashboard", { replace: true });
     }
-  }, []);
+  }, [pathname]);
 
   return (
     <HelmetProvider>
