@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
+import { CgSpinner } from "react-icons/cg";
 import { HiOutlineLockClosed, HiOutlineMail, HiX } from "react-icons/hi";
+import classNames from "classnames";
 
 import AuthContext from "../context/AuthProvider";
 import { axios } from "../libs";
@@ -61,7 +63,7 @@ export default function Login() {
           />
         </div>
 
-        <form className="flex w-full  flex-col gap-14" onSubmit={handleSubmit}>
+        <form className="flex w-full flex-col gap-14" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-6">
             <label
               htmlFor="username"
@@ -73,9 +75,10 @@ export default function Login() {
                 id="email"
                 name="email"
                 placeholder="admin@example.com"
-                className="w-full bg-transparent text-current placeholder:text-black-gp-200/60  focus:border-0 focus:outline-none"
+                className="w-full bg-transparent text-current placeholder:text-black-gp-200/60 focus:border-0 focus:outline-none"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
+                disabled={isLoading}
                 required
               />
             </label>
@@ -93,14 +96,21 @@ export default function Login() {
                 value={password}
                 required
                 onChange={(event) => setPassword(event.target.value)}
+                disabled={isLoading}
               />
             </label>
           </div>
           <button
             type="submit"
-            className="border-[1px] border-green-gp-50 bg-green-gp-700 py-2 px-4 text-white shadow-lg hover:brightness-90 focus:outline focus:outline-1 focus:outline-green-gp-700/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:brightness-100"
+            className="flex items-center justify-center gap-4 border-[1px] border-green-gp-50 bg-green-gp-700 py-2 px-4 text-lg text-white shadow-lg hover:brightness-90 focus:outline focus:outline-1 focus:outline-green-gp-700/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:brightness-100"
             disabled={isLoading}
           >
+            <CgSpinner
+              className={classNames("h-6 w-6 animate-spin", {
+                block: isLoading,
+                hidden: !isLoading,
+              })}
+            />
             Masuk
           </button>
         </form>
