@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
 import { HiOutlineLockClosed, HiOutlineMail, HiX } from "react-icons/hi";
-import axios from "axios";
 
 import AuthContext from "../context/AuthProvider";
+import { axios } from "../libs";
 
 export default function Login() {
-  const URL = import.meta.env.VITE_API_URL;
   const { setAuth } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +17,22 @@ export default function Login() {
       setIsLoading(true);
       setIsError(false);
       try {
-        const response = await axios.post(`${URL}/login`, { email, password });
+        const response = await axios.post(
+          `/login`,
+          JSON.stringify({ email, password }),
+          {
+            headers: {
+              "Content-Type": "application/json",
+              withCredentials: true,
+            },
+          }
+        );
+
+        setAuth({
+          email,
+          password,
+          token: response?.data?.accessToken,
+        });
       } catch (error) {
         setIsError(true);
       } finally {
@@ -84,7 +98,7 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="border-[1px] border-green-gp-50 bg-green-gp-700 py-2 px-4 text-white shadow-lg hover:brightness-90 focus:outline focus:outline-1 focus:outline-green-gp-700/90 disabled:opacity-50"
+            className="border-[1px] border-green-gp-50 bg-green-gp-700 py-2 px-4 text-white shadow-lg hover:brightness-90 focus:outline focus:outline-1 focus:outline-green-gp-700/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:brightness-100"
             disabled={isLoading}
           >
             Masuk
