@@ -5,6 +5,7 @@ import {
   About,
   Admin,
   Articles,
+  Dashboard,
   DetailArticle,
   Error,
   History,
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
       },
     ],
   },
