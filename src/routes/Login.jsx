@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { CgSpinner } from "react-icons/cg";
 import { HiOutlineLockClosed, HiOutlineMail, HiX } from "react-icons/hi";
 import classNames from "classnames";
 
-import AuthContext from "../context/AuthProvider";
+import { useAuth } from "../hooks";
 import { axios } from "../libs";
 
 export default function Login() {
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
