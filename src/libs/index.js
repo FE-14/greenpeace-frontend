@@ -1,4 +1,5 @@
+import axios from "./axios";
 import formatPublishedDate from "./formatPublishedDate";
 import { fetcher, useSWR } from "./swr";
 
-export { fetcher, formatPublishedDate, useSWR };
+export { axios, fetcher, formatPublishedDate, useSWR };
