@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -7,7 +8,10 @@ export default function Error() {
   const errorResponse = useRouteError();
 
   return (
-    <>
+    <HelmetProvider>
+      <Helmet>
+        <title>Halaman Tidak Ditemukan | Greenpeace Indonesia</title>
+      </Helmet>
       <Navbar forErrorElement />
       <main className="flex flex-grow items-center justify-center">
         <div className="basic-padding relative flex min-h-[calc(100vh/2)] w-full flex-col items-center justify-center font-montserrat">
@@ -44,6 +48,6 @@ export default function Error() {
         </div>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
