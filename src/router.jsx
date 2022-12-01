@@ -3,11 +3,13 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import {
   About,
+  Admin,
   Articles,
   DetailArticle,
   Error,
   History,
   Homepage,
+  Login,
   OurVictory,
   Search,
 } from "./routes";
@@ -45,6 +47,16 @@ const router = createBrowserRouter([
       {
         path: "our-victory",
         element: <OurVictory />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
+    children: [
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },
