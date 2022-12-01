@@ -5,6 +5,7 @@ import DetailArticle from "./detail-article/DetailArticle";
 import History from "./history/History";
 import Homepage from "./homepage/Homepage";
 import OurVictory from "./our-victory/OurVictory";
+import Dashboard from "./Dashboard";
 import Error from "./Error";
 import Login from "./Login";
 import Root from "./Root";
@@ -14,6 +15,7 @@ export {
   About,
   Admin,
   Articles,
+  Dashboard,
   DetailArticle,
   Error,
   History,
